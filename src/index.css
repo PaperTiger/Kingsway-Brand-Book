@@ -326,7 +326,7 @@ body.print-active .print-book-page { overflow: hidden; }
   grid-template-rows: 1fr;
   gap: 0 56px;
   height: 100dvh;
-  padding: 56px 48px;
+  padding: 56px 30px;
   background: var(--fg-overview-bg, #111);
   box-sizing: border-box;
   align-items: start;
@@ -701,6 +701,7 @@ body.print-active .print-book-page { overflow: hidden; }
   .sidebar.open { box-shadow: none; }
   .main { margin-left: 280px; padding-top: 0; }
   .page { padding: 30px 30px 48px; overflow: visible; }
+  .page-nav { padding: 0 30px; }
   .mobile-header { display: none; }
   .sidebar-close { display: none; }
   .sidebar-overlay { display: none !important; }
