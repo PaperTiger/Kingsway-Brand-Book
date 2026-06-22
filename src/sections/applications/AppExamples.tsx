@@ -1,3 +1,14 @@
+import img1 from '../../assets/application/Frame.jpg'
+import img2 from '../../assets/application/Frame (1).jpg'
+import img3 from '../../assets/application/Group 1984079146.jpg'
+import img4 from '../../assets/application/Group 1984079159.png'
+import img5 from '../../assets/application/Group 1984079170.png'
+import img6 from '../../assets/application/Cover — WorRC Phase Two.jpg'
+import img7 from '../../assets/application/Cover — WorRC Phase Two (1).jpg'
+import img8 from '../../assets/application/Cover — WorRC Phase Two (2).jpg'
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8]
+
 export default function AppExamples() {
   return (
     <div className="page">
@@ -5,20 +16,12 @@ export default function AppExamples() {
       <h2 className="section-title">Examples</h2>
       <p className="section-intro">
         The Kingsway system applied across pitch decks, social media, merchandise,
-        and digital media. Examples will be updated as real assets are produced.
+        and digital media.
       </p>
       <div className="masonry-grid" style={{ margin: "0 0 80px" }}>
-        <img src="https://picsum.photos/seed/201/600/400" alt="Application example" />
-        <img src="https://picsum.photos/seed/202/600/600" alt="Application example" />
-        <img src="https://picsum.photos/seed/203/600/400" alt="Application example" />
-        <img src="https://picsum.photos/seed/204/600/600" alt="Application example" />
-        <img src="https://picsum.photos/seed/205/600/400" alt="Application example" />
-        <img src="https://picsum.photos/seed/206/600/600" alt="Application example" />
-        <img src="https://picsum.photos/seed/207/600/400" alt="Application example" />
-        <img src="https://picsum.photos/seed/208/600/600" alt="Application example" />
-      </div>
-      <div className="placeholder-badge">
-        <strong>Placeholder mockups.</strong> Replace with real Kingsway application examples before publishing.
+        {images.map((src, i) => (
+          <img key={i} src={src} alt="Application example" />
+        ))}
       </div>
     </div>
   )

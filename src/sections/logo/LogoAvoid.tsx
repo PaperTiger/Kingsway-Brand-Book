@@ -1,5 +1,5 @@
 import brand from '../../brand.config'
-import { FullLogoSvg } from '../../components/ui/LogoSvg'
+import { MainWordmarkSvg } from '../../components/ui/LogoSvg'
 
 const t = brand.tokens
 
@@ -65,8 +65,8 @@ export default function LogoAvoid() {
             <div style={{ background: item.bg, height: 160, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", borderBottom: "1px solid #E5E5E5" }}>
               {item.isRetype
                 ? <span style={{ fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, color: "#000", letterSpacing: "-0.01em" }}>{brand.meta.client}</span>
-                : <FullLogoSvg
-                    markFill={item.mark!} wordmarkFill={item.wm!}
+                : <MainWordmarkSvg
+                    wordmarkFill={item.wm!}
                     style={{ height: 44, width: "auto", ...item.svgStyle }}
                   />
               }

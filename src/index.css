@@ -453,7 +453,7 @@ body.print-active .print-book-page { overflow: hidden; }
 
 /* ── Masonry grid ──────────────────────────────────────────────── */
 .masonry-grid {
-  columns: 3;
+  columns: 2;
   column-gap: 10px;
 }
 .masonry-grid img {

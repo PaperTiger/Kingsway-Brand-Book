@@ -165,7 +165,7 @@ const brand: BrandConfig = {
       group: 'Logo & mark',
       items: [
         { label: 'Main wordmark',    id: 'logo-main-wordmark' },
-        { label: 'Wordmark and Mark', id: 'logo-horizontal' },
+        { label: 'Wordmark and mark', id: 'logo-horizontal' },
         { label: 'Stacked logo',     id: 'logo-stacked' },
         { label: 'Logo mark',        id: 'h-logo-mark' },
         { label: 'Avatar & favicon', id: 'logo-avatar' },
