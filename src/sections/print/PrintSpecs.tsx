@@ -59,7 +59,7 @@ export default function PrintSpecs() {
         ].map(section => (
           <div key={section.label} style={{ border: "1px solid #E5E5E5" }}>
             <div style={{ background: t['dark-blue'], padding: "13px 24px" }}>
-              <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 12,
+              <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 12,
                 letterSpacing: "0.08em", textTransform: "uppercase", color: "#fff" }}>
                 {section.label}
               </div>
@@ -71,7 +71,7 @@ export default function PrintSpecs() {
 
       {/* Safe area diagram */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40, marginBottom: 56 }}>
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Print safe area</h3>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 28, maxWidth: 520 }}>
@@ -84,19 +84,19 @@ export default function PrintSpecs() {
             style={{ display: "block", flexShrink: 0, fontFamily: "Inter, sans-serif" }}>
             {/* Bleed */}
             <rect x="8" y="8" width="264" height="194"
-              fill={`color-mix(in srgb, ${t['primary-blue']} 7%, white)`}
-              stroke={t['primary-blue']} strokeWidth="1" strokeDasharray="5,3" />
+              fill={`color-mix(in srgb, ${t['dark-blue']} 7%, white)`}
+              stroke={t['dark-blue']} strokeWidth="1" strokeDasharray="5,3" />
             {/* Trim */}
             <rect x="20" y="20" width="240" height="170"
               fill="white" stroke="#AAAAAA" strokeWidth="1" />
             {/* Safe */}
             <rect x="34" y="34" width="212" height="142"
-              fill={`color-mix(in srgb, ${t['primary-blue']} 4%, white)`}
+              fill={`color-mix(in srgb, ${t['dark-blue']} 4%, white)`}
               stroke="#22C55E" strokeWidth="1" strokeDasharray="4,2" />
 
             {/* Labels */}
             <text x="140" y="17" textAnchor="middle" fontSize="8.5"
-              fill={t['primary-blue']} fontWeight="600">Bleed +3mm</text>
+              fill={t['dark-blue']} fontWeight="600">Bleed +3mm</text>
             <text x="140" y="30" textAnchor="middle" fontSize="8"
               fill="#111">Trim edge</text>
             <text x="140" y="112" textAnchor="middle" fontSize="9"
@@ -105,9 +105,9 @@ export default function PrintSpecs() {
               fill="#111">Live text and logos stay inside</text>
 
             {/* Dim: bleed arrow */}
-            <line x1="8" y1="205" x2="20" y2="205" stroke={t['primary-blue']} strokeWidth="0.75" />
+            <line x1="8" y1="205" x2="20" y2="205" stroke={t['dark-blue']} strokeWidth="0.75" />
             <text x="14" y="212" textAnchor="middle" fontSize="7"
-              fill={t['primary-blue']}>3mm</text>
+              fill={t['dark-blue']}>3mm</text>
             {/* Dim: safe arrow */}
             <line x1="20" y1="205" x2="34" y2="205" stroke="#22C55E" strokeWidth="0.75" />
             <text x="27" y="212" textAnchor="middle" fontSize="7"
@@ -116,7 +116,7 @@ export default function PrintSpecs() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
-              { color: t['primary-blue'], dash: true,  label: 'Bleed edge: extend background to here (+3mm)' },
+              { color: t['dark-blue'], dash: true,  label: 'Bleed edge: extend background to here (+3mm)' },
               { color: '#AAAAAA',         dash: false, label: 'Trim edge: the final cut line' },
               { color: '#22C55E',         dash: true,  label: 'Safe area: keep all live content inside' },
             ].map(item => (
@@ -135,7 +135,7 @@ export default function PrintSpecs() {
 
       {/* PDF export */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40 }}>
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Export this brand book as PDF</h3>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 24, maxWidth: 560 }}>
@@ -146,8 +146,8 @@ export default function PrintSpecs() {
           onClick={() => (window as any).__brandBookPrint?.() ?? window.print()}
           style={{
             display: "inline-flex", alignItems: "center", gap: 9,
-            background: t['charcoal'], color: "#fff", border: "none", cursor: "pointer",
-            fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600,
+            background: '#111', color: "#fff", border: "none", cursor: "pointer",
+            fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
             letterSpacing: "0.06em", padding: "13px 22px", marginBottom: 28,
           }}
         >
@@ -160,10 +160,10 @@ export default function PrintSpecs() {
           Print full brand book
         </button>
 
-        <div style={{ background: "#F8F4FF", borderLeft: `3px solid ${t['primary-blue']}`,
+        <div style={{ background: "#EEF3F7", borderLeft: `3px solid ${t['dark-blue']}`,
           padding: "16px 20px", maxWidth: 560 }}>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600,
-            color: t['primary-blue'], marginBottom: 6 }}>Browser tip</div>
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
+            color: t['dark-blue'], marginBottom: 6 }}>Browser tip</div>
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#111",
             lineHeight: 1.65 }}>
             In the print dialog, set <strong>Destination → Save as PDF</strong>, margins to

@@ -3,21 +3,21 @@ export default function PhotoIntro() {
     <div className="portrait-intro">
       <div style={{ display: 'flex', flexDirection: 'column', padding: 32, boxSizing: 'border-box' }}>
         <div className="section-label">Photography</div>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 300,
+        <p style={{ fontFamily: 'Saans, sans-serif', fontWeight: 300,
           fontSize: 'clamp(24px,3.2vw,48px)', lineHeight: 1.0, letterSpacing: '-0.02em',
-          color: 'var(--charcoal)', maxWidth: 720, margin: '16px 0 0' }}>
+          color: '#111', maxWidth: 720, margin: '16px 0 0' }}>
           Photography that earns its place.
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.65,
-            color: 'var(--charcoal)', margin: 0 }}>
-            Brand 2000 imagery should feel real and human. Favor candid teams at work,
+            color: '#111', margin: 0 }}>
+            Kingsway imagery should feel real and human. Favor candid teams at work,
             real environments, and clean product shots over staged stock. Photography builds
             trust by showing how the work actually gets done.
           </p>
           <div className="placeholder-badge" style={{ marginTop: 20 }}>
-            <strong>Placeholder imagery.</strong> Replace with real Brand 2000 photography before publishing.
+            <strong>Placeholder imagery.</strong> Replace with real Kingsway photography before publishing.
           </div>
         </div>
       </div>

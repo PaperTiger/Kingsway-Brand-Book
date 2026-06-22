@@ -4,10 +4,10 @@ import { StackedLogoSvg, LogoMarkSvg } from '../../components/ui/LogoSvg'
 const t = brand.tokens
 
 const avatarBgs = [
-  { bg: t['primary-blue'], mark: '#fff',            inner: t['primary-blue'], wm: '#fff', label: 'Electric Violet' },
-  { bg: t['orange'],       mark: '#111',            inner: '#fff',            wm: '#111', label: 'Coral' },
-  { bg: t['dark-blue'],   mark: '#fff',            inner: t['primary-blue'], wm: '#fff', label: 'Deep Violet' },
-  { bg: '#111111',         mark: '#fff',            inner: '#111',            wm: '#fff', label: 'Black' },
+  { bg: t['white'],          mark: t['dark-blue'],  wm: t['dark-blue'],  label: 'White'         },
+  { bg: t['primary-orange'], mark: '#000000',        wm: '#000000',        label: 'Primary Orange' },
+  { bg: t['dark-blue'],      mark: t['tan'],         wm: t['tan'],         label: 'Dark Blue'     },
+  { bg: t['black'],          mark: t['pale-blue'],  wm: t['pale-blue'],  label: 'Midnight Blue' },
 ]
 
 const faviconSizes = [64, 48, 32, 16]
@@ -35,7 +35,7 @@ export default function LogoAvatar() {
           {avatarBgs.map(a => (
             <div key={a.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
               <div style={{ width: "100%", aspectRatio: "1", borderRadius: "50%", background: a.bg, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-                <StackedLogoSvg markFill={a.mark} wordmarkFill={a.wm} innerTextFill={a.inner} style={{ width: "60%", height: "auto" }} />
+                <StackedLogoSvg markFill={a.mark} wordmarkFill={a.wm} style={{ width: "60%", height: "auto" }} />
               </div>
               <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", fontFamily: "Inter, sans-serif" }}>{a.label}</div>
             </div>
@@ -53,8 +53,8 @@ export default function LogoAvatar() {
             <div style={{ display: "flex", alignItems: "flex-end", gap: 28 }}>
               {faviconSizes.map(size => (
                 <div key={size} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: size, height: size, background: "#FFFFFF", border: "1px solid #E5E5E5", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <LogoMarkSvg markFill={t['primary-blue']} innerTextFill="#fff" style={{ width: "80%", height: "80%" }} />
+                  <div style={{ width: size, height: size, background: t['white'], border: "1px solid #E5E5E5", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <LogoMarkSvg markFill={t['dark-blue']} style={{ width: "80%", height: "80%" }} />
                   </div>
                   <div style={{ fontSize: 10, color: "#111", fontFamily: "Inter, sans-serif" }}>{size}px</div>
                 </div>
@@ -66,8 +66,8 @@ export default function LogoAvatar() {
             <div style={{ display: "flex", alignItems: "flex-end", gap: 28 }}>
               {faviconSizes.map(size => (
                 <div key={size} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: size, height: size, background: "#000000", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <LogoMarkSvg markFill="#fff" innerTextFill="#000" style={{ width: "80%", height: "80%" }} />
+                  <div style={{ width: size, height: size, background: t['black'], display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <LogoMarkSvg markFill={t['pale-blue']} style={{ width: "80%", height: "80%" }} />
                   </div>
                   <div style={{ fontSize: 10, color: "#111", fontFamily: "Inter, sans-serif" }}>{size}px</div>
                 </div>

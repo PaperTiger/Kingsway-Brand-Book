@@ -65,7 +65,7 @@ export default function Cobranding() {
         <div style={{ background: "#F8F8F8", padding: "52px 40px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 28, marginBottom: 20 }}>
             <FullLogoSvg
-              markFill={t['primary-blue']} wordmarkFill={t['charcoal']} innerTextFill="#fff"
+              markFill={t['dark-blue']} wordmarkFill={t['dark-blue']}
               style={{ height: 40, width: "auto" }}
             />
             <div style={{ width: 1, height: 52, background: "#C4C4C4" }} />
@@ -80,7 +80,7 @@ export default function Cobranding() {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start",
             gap: 22, marginBottom: 20 }}>
             <FullLogoSvg
-              markFill="#fff" wordmarkFill="#fff" innerTextFill={t['primary-blue']}
+              markFill={t['tan']} wordmarkFill={t['tan']}
               style={{ height: 40, width: "auto" }}
             />
             <div style={{ width: 64, height: 1, background: "rgba(255,255,255,0.2)" }} />
@@ -95,7 +95,7 @@ export default function Cobranding() {
 
       {/* Clearspace between logos */}
       <div className="content-block">
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Clearspace between logos</h3>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 32, maxWidth: 520 }}>
@@ -106,30 +106,30 @@ export default function Cobranding() {
           display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <FullLogoSvg
-              markFill={t['primary-blue']} wordmarkFill={t['charcoal']} innerTextFill="#fff"
+              markFill={t['dark-blue']} wordmarkFill={t['dark-blue']}
               style={{ height: 44, width: "auto" }}
             />
             <div style={{ width: csXpx, height: 44,
-              background: `color-mix(in srgb, ${t['primary-blue']} 12%, transparent)`,
+              background: `color-mix(in srgb, ${t['dark-blue']} 12%, transparent)`,
               display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
-                color: t['primary-blue'], background: "rgba(255,255,255,0.85)",
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 700,
+                color: t['dark-blue'], background: "rgba(255,255,255,0.85)",
                 padding: "1px 5px", borderRadius: 2 }}>x</span>
             </div>
             <div style={{ width: 1, height: 52, background: "#C4C4C4", flexShrink: 0 }} />
             <div style={{ width: csXpx, height: 44,
-              background: `color-mix(in srgb, ${t['primary-blue']} 12%, transparent)`,
+              background: `color-mix(in srgb, ${t['dark-blue']} 12%, transparent)`,
               display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
-                color: t['primary-blue'], background: "rgba(255,255,255,0.85)",
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 700,
+                color: t['dark-blue'], background: "rgba(255,255,255,0.85)",
                 padding: "1px 5px", borderRadius: 2 }}>x</span>
             </div>
             <PartnerLogo height={44} />
           </div>
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#111",
             display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 11,
-              background: `color-mix(in srgb, ${t['primary-blue']} 40%, transparent)`,
+            <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 11,
+              background: `color-mix(in srgb, ${t['dark-blue']} 40%, transparent)`,
               padding: "2px 7px", borderRadius: 2, flexShrink: 0 }}>x</span>
             <span>= the height of the brand mark</span>
           </div>
@@ -138,7 +138,7 @@ export default function Cobranding() {
 
       {/* Size hierarchy */}
       <div className="content-block">
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Size hierarchy</h3>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
@@ -149,7 +149,7 @@ export default function Cobranding() {
           <div style={{ background: "#F8F8F8", padding: "28px 24px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 20,
               marginBottom: 16, minHeight: 64 }}>
-              <FullLogoSvg markFill={t['primary-blue']} wordmarkFill={t['charcoal']} innerTextFill="#fff"
+              <FullLogoSvg markFill={t['dark-blue']} wordmarkFill={t['dark-blue']}
                 style={{ height: 40, width: "auto" }} />
               <div style={{ width: 1, height: 52, background: "#C4C4C4" }} />
               <PartnerLogo height={40} />
@@ -162,7 +162,7 @@ export default function Cobranding() {
           <div style={{ background: "#F8F8F8", padding: "28px 24px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 20,
               marginBottom: 16, minHeight: 64 }}>
-              <FullLogoSvg markFill={t['primary-blue']} wordmarkFill={t['charcoal']} innerTextFill="#fff"
+              <FullLogoSvg markFill={t['dark-blue']} wordmarkFill={t['dark-blue']}
                 style={{ height: 22, width: "auto", opacity: 0.7 }} />
               <div style={{ width: 1, height: 64, background: "#C4C4C4" }} />
               <PartnerLogo height={64} />
@@ -177,7 +177,7 @@ export default function Cobranding() {
 
       {/* What to avoid */}
       <div className="content-block">
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 24px', color: '#111' }}>What to avoid</h3>
         <div className="cobranding-avoid-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)",
           gap: 0, border: "1px solid #E5E5E5" }}>
@@ -187,7 +187,7 @@ export default function Cobranding() {
               borderBottom: i < 3 ? "1px solid #E5E5E5" : undefined,
               padding: "20px 22px",
             }}>
-              <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 700,
                 letterSpacing: "0.06em", color: "#CC1188", textTransform: "uppercase",
                 marginBottom: 8 }}>
                 {item.heading}

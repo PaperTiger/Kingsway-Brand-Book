@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* ── Saans (local) ──────────────────────────────────────────────── */
+@font-face { font-family: 'Saans'; font-weight: 300; font-style: normal; src: url('./assets/fonts/Saans-TRIAL-Light.woff2') format('woff2'), url('./assets/fonts/Saans-TRIAL-Light.ttf') format('truetype'); }
+@font-face { font-family: 'Saans'; font-weight: 400; font-style: normal; src: url('./assets/fonts/Saans-TRIAL-Regular.woff2') format('woff2'), url('./assets/fonts/Saans-TRIAL-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Saans'; font-weight: 500; font-style: normal; src: url('./assets/fonts/Saans-TRIAL-Medium.woff2') format('woff2'), url('./assets/fonts/Saans-TRIAL-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Saans'; font-weight: 600; font-style: normal; src: url('./assets/fonts/Saans-TRIAL-SemiBold.woff2') format('woff2'), url('./assets/fonts/Saans-TRIAL-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Saans'; font-weight: 700; font-style: normal; src: url('./assets/fonts/Saans-TRIAL-Bold.woff2') format('woff2'), url('./assets/fonts/Saans-TRIAL-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Saans'; font-weight: 800; font-style: normal; src: url('./assets/fonts/Saans-TRIAL-Heavy.woff2') format('woff2'), url('./assets/fonts/Saans-TRIAL-Heavy.ttf') format('truetype'); }
+
 /* ── Reset ─────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; }
@@ -74,12 +82,12 @@ body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; }
   transition: color 0.1s, background 0.1s;
   border-left: 3px solid transparent;
 }
-.nav-link:hover { color: var(--primary-blue, #8B3DFF); background: #F8F4FF; }
+.nav-link:hover { color: var(--primary-orange, #F05102); background: #FFF5EF; }
 .nav-link.active {
-  color: var(--primary-blue, #8B3DFF);
-  border-left-color: var(--primary-blue, #8B3DFF);
+  color: var(--primary-orange, #F05102);
+  border-left-color: var(--primary-orange, #F05102);
   font-weight: 500;
-  background: #F8F4FF;
+  background: #FFF5EF;
 }
 .nav-child { padding-left: 36px; font-size: 12px; }
 
@@ -111,16 +119,16 @@ body.print-active .print-book-page { overflow: hidden; }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary-blue, #8B3DFF);
+  color: var(--primary-orange, #F05102);
   margin-bottom: 12px;
 }
 
 .section-title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Saans', sans-serif;
   font-size: clamp(22px, 5.5vw, 34px);
   font-weight: 300;
   letter-spacing: -0.03em;
-  color: var(--charcoal, #111);
+  color: var(--black, #111);
   margin: 0 0 24px;
   line-height: 1;
 }
@@ -137,7 +145,7 @@ body.print-active .print-book-page { overflow: hidden; }
 /* ── Cover / hero ──────────────────────────────────────────────── */
 .cover {
   min-height: 100dvh;
-  background: var(--primary-blue, #8B3DFF);
+  background: var(--dark-blue, #082C48);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -146,12 +154,12 @@ body.print-active .print-book-page { overflow: hidden; }
 }
 
 .cover-heading {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Saans', sans-serif;
   font-size: clamp(80px, 14vw, 160px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.88;
-  color: #000;
+  color: var(--tan, #F1EBC9);
   margin: 0;
 }
 
@@ -159,7 +167,7 @@ body.print-active .print-book-page { overflow: hidden; }
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   line-height: 1.8;
-  color: #000;
+  color: var(--tan, #F1EBC9);
 }
 
 .cover-seal {
@@ -240,7 +248,7 @@ body.print-active .print-book-page { overflow: hidden; }
 }
 
 .cs-zone {
-  background: rgba(var(--primary-blue-rgb, 139, 61, 255), 0.15);
+  background: rgba(var(--dark-blue-rgb, 8, 44, 72), 0.15);
   padding: var(--cs-x, 36px);
   position: relative;
   display: inline-block;
@@ -248,7 +256,7 @@ body.print-active .print-book-page { overflow: hidden; }
 
 .cs-logo-box {
   background: transparent;
-  border: 1.5px dashed rgba(var(--primary-blue-rgb, 139, 61, 255), 0.45);
+  border: 1.5px dashed rgba(var(--dark-blue-rgb, 8, 44, 72), 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,8 +274,8 @@ body.print-active .print-book-page { overflow: hidden; }
   justify-content: center;
   pointer-events: none;
 }
-.cs-dim-v.top    { top: 0;    border-bottom: 1px solid rgba(var(--primary-blue-rgb, 139, 61, 255), 0.20); }
-.cs-dim-v.bottom { bottom: 0; border-top:    1px solid rgba(var(--primary-blue-rgb, 139, 61, 255), 0.20); }
+.cs-dim-v.top    { top: 0;    border-bottom: 1px solid rgba(var(--dark-blue-rgb, 8, 44, 72), 0.20); }
+.cs-dim-v.bottom { bottom: 0; border-top:    1px solid rgba(var(--dark-blue-rgb, 8, 44, 72), 0.20); }
 
 .cs-dim-h {
   position: absolute;
@@ -278,14 +286,14 @@ body.print-active .print-book-page { overflow: hidden; }
   justify-content: center;
   pointer-events: none;
 }
-.cs-dim-h.left  { left: 0;  border-right: 1px solid rgba(var(--primary-blue-rgb, 139, 61, 255), 0.20); }
-.cs-dim-h.right { right: 0; border-left:  1px solid rgba(var(--primary-blue-rgb, 139, 61, 255), 0.20); }
+.cs-dim-h.left  { left: 0;  border-right: 1px solid rgba(var(--dark-blue-rgb, 8, 44, 72), 0.20); }
+.cs-dim-h.right { right: 0; border-left:  1px solid rgba(var(--dark-blue-rgb, 8, 44, 72), 0.20); }
 
 .cs-lbl {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 10px;
-  color: var(--primary-blue, #8B3DFF);
+  color: var(--dark-blue, #082C48);
   background: rgba(255,255,255,0.9);
   padding: 1px 5px;
   border-radius: 2px;
@@ -303,12 +311,12 @@ body.print-active .print-book-page { overflow: hidden; }
 }
 
 .cs-def-x {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 11px;
   padding: 2px 7px;
   border-radius: 2px;
-  background: rgba(var(--primary-blue-rgb, 139, 61, 255), 0.40);
+  background: rgba(var(--dark-blue-rgb, 8, 44, 72), 0.40);
 }
 
 /* ── Typography overview fullbleed ─────────────────────────────── */
@@ -465,19 +473,19 @@ body.print-active .print-book-page { overflow: hidden; }
   box-sizing: border-box;
 }
 .intro-statement {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Saans', sans-serif;
   font-weight: 300;
   font-size: clamp(24px, 3.2vw, 48px);
   line-height: 1.0;
   letter-spacing: -0.02em;
-  color: var(--charcoal, #111);
+  color: #111;
   max-width: 960px;
   margin: 0;
 }
 .intro-body { max-width: 520px; }
 .intro-body p {
   font-family: 'Inter', sans-serif;
-  color: var(--charcoal, #111);
+  color: #111;
   line-height: 1.65;
   font-size: 16px;
   margin-bottom: 14px;
@@ -488,9 +496,9 @@ body.print-active .print-book-page { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--charcoal, #111);
+  background: #111;
   color: #fff;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Saans', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -505,9 +513,9 @@ body.print-active .print-book-page { overflow: hidden; }
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: var(--charcoal, #111);
-  border: 1px solid var(--charcoal, #111);
-  font-family: 'DM Sans', sans-serif;
+  color: #111;
+  border: 1px solid #111;
+  font-family: 'Saans', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -521,7 +529,7 @@ body.print-active .print-book-page { overflow: hidden; }
   background: transparent;
   color: #fff;
   border: 1px solid rgba(255,255,255,0.45);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Saans', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -551,7 +559,7 @@ body.print-active .print-book-page { overflow: hidden; }
   padding: 14px 18px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  color: var(--charcoal, #111);
+  color: #111;
   line-height: 1.5;
   max-width: 520px;
 }
@@ -575,12 +583,12 @@ body.print-active .print-book-page { overflow: hidden; }
   gap: 6px;
   padding: 28px 0;
   max-width: 45%;
-  color: var(--charcoal, #111);
+  color: #111;
   transition: color 0.15s;
   text-align: left;
 }
-.page-nav-link:hover { color: var(--primary-blue, #8B3DFF); }
-.page-nav-link:hover .page-nav-dir { color: var(--primary-blue, #8B3DFF); }
+.page-nav-link:hover { color: var(--primary-orange, #F05102); }
+.page-nav-link:hover .page-nav-dir { color: var(--primary-orange, #F05102); }
 
 .page-nav-dir {
   font-family: 'Inter', sans-serif;
@@ -593,7 +601,7 @@ body.print-active .print-book-page { overflow: hidden; }
 }
 
 .page-nav-label {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Saans', sans-serif;
   font-size: 17px;
   font-weight: 500;
   line-height: 1.1;
@@ -629,8 +637,8 @@ body.print-active .print-book-page { overflow: hidden; }
   text-align: left;
 }
 .sidebar-print-btn:hover {
-  border-color: var(--primary-blue, #8B3DFF);
-  color: var(--primary-blue, #8B3DFF);
+  border-color: var(--primary-orange, #F05102);
+  color: var(--primary-orange, #F05102);
 }
 
 /* ── Print / PDF export ────────────────────────────────────────── */
@@ -697,6 +705,7 @@ body.print-active .print-book-page { overflow: hidden; }
   .sidebar-close { display: none; }
   .sidebar-overlay { display: none !important; }
   .section-title { font-size: clamp(28px, 4vw, 42px); }
+  .line-chart-box { max-width: 50%; }
 }
 
 /* ── Mobile-only overrides ─────────────────────────────────────── */
@@ -763,6 +772,7 @@ body.print-active .print-book-page { overflow: hidden; }
   .chart-compare-grid {
     grid-template-columns: 1fr !important;
   }
+  .line-chart-box { max-width: 100%; }
 
   /* DonutChart: flex row → column so SVG stacks above legend */
   .donut-chart-row {

@@ -32,7 +32,7 @@ export default function TypeSpecimen() {
       <div className="section-label">Typography</div>
       <h2 className="section-title">Type specimen</h2>
       <p className="section-intro">
-        The full type scale in use: display through caption, DM Sans and Inter working together.
+        The full type scale in use: display through caption, Saans across every level.
       </p>
 
       <div style={{ borderTop: '1px solid #E5E5E5' }}>
@@ -45,7 +45,7 @@ export default function TypeSpecimen() {
               fontSize: CLAMP_SIZE[s.size] ?? s.size,
               letterSpacing: s.ls,
               lineHeight: s.lh,
-              color: 'var(--charcoal, #111)',
+              color: '#111',
             }}>
               {SPECIMEN_TEXT[s.name] ?? s.name}
             </div>

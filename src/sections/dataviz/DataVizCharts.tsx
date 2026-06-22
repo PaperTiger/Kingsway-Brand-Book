@@ -26,22 +26,20 @@ function donutSegment(
 }
 
 // ── Bar chart data ────────────────────────────────────────────────
-// Light version: lime-dark (#5C705C) for Q5 — 5.5:1 contrast on white, WCAG AA
 const BAR_DATA_LIGHT = [
-  { label: 'Q1', value: 63, color: t['primary-blue'] },
-  { label: 'Q2', value: 82, color: t['orange'] },
-  { label: 'Q3', value: 47, color: t['dark-blue'] },
-  { label: 'Q4', value: 91, color: t['purple'] },
-  { label: 'Q5', value: 74, color: t['lime-dark'] },
+  { label: 'Q1', value: 63, color: t['dark-blue'] },
+  { label: 'Q2', value: 82, color: t['primary-orange'] },
+  { label: 'Q3', value: 47, color: t['mid-blue'] },
+  { label: 'Q4', value: 91, color: '#9D9152' },
+  { label: 'Q5', value: 74, color: '#554622' },
 ]
 
-// Dark version: Lime (#CCFFCC) on dark, White for Q4 contrast
 const BAR_DATA_DARK = [
-  { label: 'Q1', value: 63, color: t['primary-blue'] },
-  { label: 'Q2', value: 82, color: t['orange'] },
-  { label: 'Q3', value: 47, color: t['purple'] },
-  { label: 'Q4', value: 91, color: t['white'] },
-  { label: 'Q5', value: 74, color: t['pale-green'] },
+  { label: 'Q1', value: 63, color: t['pale-blue'] },
+  { label: 'Q2', value: 82, color: t['primary-orange'] },
+  { label: 'Q3', value: 47, color: t['tan'] },
+  { label: 'Q4', value: 91, color: '#FFC099' },
+  { label: 'Q5', value: 74, color: t['white'] },
 ]
 
 interface BarDatum { label: string; value: number; color: string }
@@ -94,8 +92,8 @@ function BarChart({ data, dark = false }: { data: BarDatum[]; dark?: boolean }) 
 // ── Line chart ───────────────────────────────────────────────────
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
 const LINE_DATA = [
-  { label: 'Series A', color: t['primary-blue'], values: [42, 58, 51, 74, 67, 89] },
-  { label: 'Series B', color: t['orange'],        values: [28, 35, 48, 42, 60, 72] },
+  { label: 'Series A', color: t['dark-blue'],      values: [42, 58, 51, 74, 67, 89] },
+  { label: 'Series B', color: t['primary-orange'], values: [28, 35, 48, 42, 60, 72] },
 ]
 
 function LineChart() {
@@ -150,19 +148,18 @@ function LineChart() {
 
 // ── Donut chart ──────────────────────────────────────────────────
 const DONUT_DATA_LIGHT = [
-  { label: 'Product',  pct: 0.35, color: t['primary-blue'] },
-  { label: 'Services', pct: 0.22, color: t['orange'] },
-  { label: 'Support',  pct: 0.18, color: t['dark-blue'] },
-  { label: 'Growth',   pct: 0.13, color: t['lime-dark'] },
-  { label: 'Other',    pct: 0.12, color: t['purple'] },
+  { label: 'Product',  pct: 0.35, color: t['dark-blue'] },
+  { label: 'Services', pct: 0.22, color: t['primary-orange'] },
+  { label: 'Support',  pct: 0.18, color: t['mid-blue'] },
+  { label: 'Growth',   pct: 0.13, color: '#9D9152' },
+  { label: 'Other',    pct: 0.12, color: '#554622' },
 ]
 
-// Dark variant: swap dark-blue → purple, lime-dark → pale-green, purple → white
 const DONUT_DATA_DARK = [
-  { label: 'Product',  pct: 0.35, color: t['primary-blue'] },
-  { label: 'Services', pct: 0.22, color: t['orange'] },
-  { label: 'Support',  pct: 0.18, color: t['purple'] },
-  { label: 'Growth',   pct: 0.13, color: t['pale-green'] },
+  { label: 'Product',  pct: 0.35, color: t['pale-blue'] },
+  { label: 'Services', pct: 0.22, color: t['primary-orange'] },
+  { label: 'Support',  pct: 0.18, color: t['tan'] },
+  { label: 'Growth',   pct: 0.13, color: '#FFC099' },
   { label: 'Other',    pct: 0.12, color: t['white'] },
 ]
 
@@ -189,7 +186,7 @@ function DonutChart({ data, dark = false }: { data: DonutDatum[]; dark?: boolean
         <text x={cx} y={cy - 7} textAnchor="middle" fontSize="10"
           fill={centerLabelColor} fontFamily="Inter, sans-serif">Total</text>
         <text x={cx} y={cy + 16} textAnchor="middle" fontSize="20" fontWeight="700"
-          fill={centerValueColor} fontFamily="DM Sans, sans-serif">100%</text>
+          fill={centerValueColor} fontFamily="Saans, sans-serif">100%</text>
       </svg>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {data.map(d => (
@@ -239,7 +236,7 @@ export default function DataVizCharts() {
       {/* Bar chart — light + dark */}
       <div style={{ marginBottom: 48 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 16 }}>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 15,
+          <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
             color: "#111" }}>Bar chart</div>
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
             letterSpacing: "0.07em", textTransform: "uppercase" }}>Multi-category</div>
@@ -254,8 +251,9 @@ export default function DataVizCharts() {
             </div>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
               marginTop: 8, lineHeight: 1.5 }}>
-              Q5 uses Lime 800 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
-                padding: "1px 5px", borderRadius: 2 }}>#5C705C</span>: 5.5:1 contrast, WCAG AA
+              Q4 uses Tan 3 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#9D9152</span> (3.2:1); Q5 uses Tan 4 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#554622</span> (9.1:1)
             </div>
           </div>
           <div>
@@ -268,8 +266,8 @@ export default function DataVizCharts() {
             </div>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
               marginTop: 8, lineHeight: 1.5 }}>
-              Q5 uses Lime 500 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
-                padding: "1px 5px", borderRadius: 2 }}>#CCFFCC</span>: works on dark backgrounds
+              Q4 swaps to Orange 2 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#FFC099</span> to separate it from Q1 Pale Blue
             </div>
           </div>
         </div>
@@ -278,12 +276,12 @@ export default function DataVizCharts() {
       {/* Line chart */}
       <div style={{ marginBottom: 48 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 16 }}>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 15,
+          <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
             color: "#111" }}>Line chart</div>
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
             letterSpacing: "0.07em", textTransform: "uppercase" }}>Time series</div>
         </div>
-        <div style={{ border: "1px solid #E5E5E5", padding: "32px 24px" }}>
+        <div className="line-chart-box" style={{ border: "1px solid #E5E5E5", padding: "32px 24px" }}>
           <LineChart />
         </div>
       </div>
@@ -291,7 +289,7 @@ export default function DataVizCharts() {
       {/* Donut chart — light + dark */}
       <div style={{ marginBottom: 56 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 16 }}>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 15,
+          <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
             color: "#111" }}>Donut chart</div>
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
             letterSpacing: "0.07em", textTransform: "uppercase" }}>Part-to-whole</div>
@@ -317,13 +315,13 @@ export default function DataVizCharts() {
         </div>
         <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
           marginTop: 8, lineHeight: 1.5 }}>
-          Dark variant: Deep Violet swapped for Bright Purple; Growth uses Pale Green; fifth slot uses White for maximum contrast
+          Dark variant: Growth swaps to Orange 2 (#FFC099) to distinguish it from Pale Blue; fifth slot uses White for maximum contrast
         </div>
       </div>
 
       {/* Style spec */}
       <div className="content-block">
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 4px', color: '#111' }}>Chart style specifications</h3>
         <div style={{ marginTop: 4, borderTop: "1px solid #E5E5E5" }}>
           <SpecRow label="Gridlines" spec="1px #E5E5E5, horizontal only, dashed on line charts, solid on bar charts" />
@@ -332,7 +330,7 @@ export default function DataVizCharts() {
           <SpecRow label="Legend" spec="Inter 11–12px / #333, below chart, horizontal, 16×3px rounded color block" />
           <SpecRow label="Bar corners" spec="border-radius: 2px, max 4px" />
           <SpecRow label="Background" spec="Always white (#FFFFFF) or brand dark. Ensures print-safe export." />
-          <SpecRow label="Chart title" spec="DM Sans 14px / 600 / #111, above chart, left-aligned" />
+          <SpecRow label="Chart title" spec="Saans 14px / 600 / #111, above chart, left-aligned" />
           <SpecRow label="Chart subtitle" spec="Inter 12px / #4D4D4D, immediately below title, left-aligned" />
           <SpecRow label="Dot size (line)" spec="radius 4–5px, filled with the series color" />
           <SpecRow label="Stroke weight" spec="2–2.5px for lines, 1px for axis and grid lines" />

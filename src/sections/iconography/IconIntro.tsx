@@ -23,7 +23,7 @@ export default function IconIntro() {
       <div style={{ flex: 1 }} className="intro-spacer" />
       <div className="intro-body">
         <p>
-          The Brand 2000 icon system is built from the same geometric language as the mark. Icons sit on a
+          The Kingsway icon system is built from the same geometric language as the mark. Icons sit on a
           consistent 24px grid with a 1.5px stroke weight, so they feel native to the brand rather than borrowed
           from a generic library.
         </p>
@@ -41,7 +41,7 @@ export default function IconIntro() {
           Download icon set
         </a>
         <div className="placeholder-badge">
-          <strong>Placeholder icon set.</strong> Replace with the real Brand 2000 icon library before publishing.
+          <strong>Placeholder icon set.</strong> Replace with the real Kingsway icon library before publishing.
         </div>
       </div>
     </div>

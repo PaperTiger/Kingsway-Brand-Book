@@ -37,29 +37,38 @@ interface Combo {
 
 const combos: Combo[] = [
   {
-    bgHex: t['primary-blue'], fgHex: '#FFFFFF', label: 'Primary / White',
-    markFill: '#FFFFFF', wordmarkFill: '#FFFFFF', innerTextFill: t['primary-blue'],
+    bgHex: t['primary-orange'], fgHex: '#000000', label: 'Primary Orange / Black',
+    markFill: '#000000', wordmarkFill: '#000000', innerTextFill: t['primary-orange'],
   },
   {
-    bgHex: t['dark-blue'], fgHex: '#FFFFFF', label: 'Dark Blue / White',
-    markFill: '#FFFFFF', wordmarkFill: '#FFFFFF', innerTextFill: t['dark-blue'],
+    bgHex: t['dark-blue'], fgHex: t['tan'], label: 'Dark Blue / Tan',
+    markFill: t['tan'], wordmarkFill: t['tan'], innerTextFill: t['dark-blue'],
   },
   {
-    bgHex: t['charcoal'], fgHex: '#FFFFFF', label: 'Black / White',
-    markFill: '#FFFFFF', wordmarkFill: '#FFFFFF', innerTextFill: t['charcoal'],
+    bgHex: t['black'], fgHex: t['pale-blue'], label: 'Midnight Blue / Pale Blue',
+    markFill: t['pale-blue'], wordmarkFill: t['pale-blue'], innerTextFill: t['black'],
   },
   {
-    bgHex: '#FFFFFF', fgHex: t['charcoal'], label: 'White / Black',
-    markFill: t['primary-blue'], wordmarkFill: t['charcoal'], innerTextFill: '#FFFFFF',
+    bgHex: t['white'], fgHex: '#000000', label: 'White / Black',
+    markFill: '#000000', wordmarkFill: '#000000', innerTextFill: t['white'],
     outline: true,
   },
   {
-    bgHex: t['orange'], fgHex: t['charcoal'], label: 'Orange / Black',
-    markFill: t['charcoal'], wordmarkFill: t['charcoal'], innerTextFill: t['orange'],
+    bgHex: t['tan'], fgHex: t['dark-blue'], label: 'Tan / Dark Blue',
+    markFill: t['dark-blue'], wordmarkFill: t['dark-blue'], innerTextFill: t['tan'],
   },
   {
-    bgHex: t['pale-green'], fgHex: t['charcoal'], label: 'Pale Green / Black',
-    markFill: t['charcoal'], wordmarkFill: t['charcoal'], innerTextFill: t['pale-green'],
+    bgHex: t['mid-blue'], fgHex: '#FFFFFF', label: 'Mid Blue / White',
+    markFill: '#FFFFFF', wordmarkFill: '#FFFFFF', innerTextFill: t['mid-blue'],
+  },
+  {
+    bgHex: t['pale-blue'], fgHex: t['dark-blue'], label: 'Pale Blue / Dark Blue',
+    markFill: t['dark-blue'], wordmarkFill: t['dark-blue'], innerTextFill: t['pale-blue'],
+  },
+  {
+    bgHex: t['white'], fgHex: t['dark-blue'], label: 'White / Dark Blue',
+    markFill: t['dark-blue'], wordmarkFill: t['dark-blue'], innerTextFill: t['white'],
+    outline: true,
   },
 ]
 

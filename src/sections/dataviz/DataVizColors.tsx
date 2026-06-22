@@ -4,24 +4,24 @@ const t = brand.tokens
 
 const sequence = [
   {
-    n: '01', name: 'Electric Violet', hex: t['primary-blue'], text: '#fff',
+    n: '01', name: 'Dark Blue', hex: t['dark-blue'], text: '#F1EBC9',
     note: 'Primary series: anchors every chart to the brand identity. Always use first.',
   },
   {
-    n: '02', name: 'Coral', hex: t['orange'], text: '#fff',
-    note: 'Second series: contrast-safe alongside Electric Violet on both light and dark.',
+    n: '02', name: 'Primary Orange', hex: t['primary-orange'], text: '#000000',
+    note: 'Second series: contrast-safe alongside Dark Blue on both light and dark.',
   },
   {
-    n: '03', name: 'Deep Violet', hex: t['dark-blue'], text: '#fff',
+    n: '03', name: 'Mid Blue', hex: t['mid-blue'], text: '#FFFFFF',
     note: 'Third series: use for charts requiring three or more distinct data series.',
   },
   {
-    n: '04', name: 'Bright Purple', hex: t['purple'], text: '#fff',
+    n: '04', name: 'Pale Blue', hex: t['pale-blue'], text: '#082C48',
     note: 'Fourth series: limit charts to four color-coded series maximum.',
   },
   {
-    n: '05', name: 'Lime', hex: t['pale-green'], text: '#000',
-    note: 'Use only on dark backgrounds. Insufficient contrast on white chart areas.',
+    n: '05', name: 'Tan', hex: t['tan'], text: '#082C48',
+    note: 'Use on dark backgrounds only. Insufficient contrast on white chart areas.',
   },
   {
     n: '06', name: 'Mid Gray', hex: '#9CA3AF', text: '#fff',
@@ -31,7 +31,7 @@ const sequence = [
 
 const rules = [
   {
-    heading: 'Start with Electric Violet',
+    heading: 'Start with Dark Blue',
     body: 'The primary brand color always takes the first data series, anchoring the chart and drawing the eye to the most important metric.',
   },
   {
@@ -68,11 +68,11 @@ export default function DataVizColors() {
           }}>
             <div style={{ background: s.hex, height: 88, padding: "14px 18px",
               display: "flex", alignItems: "flex-start" }}>
-              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 28, fontWeight: 700,
+              <span style={{ fontFamily: "'Saans', sans-serif", fontSize: 28, fontWeight: 700,
                 color: s.text, opacity: 0.3, lineHeight: 1 }}>{s.n}</span>
             </div>
             <div style={{ padding: "16px 18px" }}>
-              <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600,
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
                 color: "#111", marginBottom: 4 }}>{s.name}</div>
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 600,
                 color: "#111", letterSpacing: "0.06em", marginBottom: 8 }}>{s.hex.toUpperCase()}</div>
@@ -85,7 +85,7 @@ export default function DataVizColors() {
 
       {/* Usage rules */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40, marginBottom: 56 }}>
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 24px', color: '#111' }}>Usage rules</h3>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0,
           border: "1px solid #E5E5E5" }}>
@@ -95,8 +95,8 @@ export default function DataVizColors() {
               borderBottom: i < 2 ? "1px solid #E5E5E5" : undefined,
               padding: "24px",
             }}>
-              <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600,
-                color: t['primary-blue'], marginBottom: 8 }}>{r.heading}</div>
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
+                color: t['dark-blue'], marginBottom: 8 }}>{r.heading}</div>
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#111",
                 lineHeight: 1.6 }}>{r.body}</div>
             </div>
@@ -106,7 +106,7 @@ export default function DataVizColors() {
 
       {/* Sequential palette */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40 }}>
-        <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17,
+        <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Sequential palette</h3>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
@@ -116,7 +116,7 @@ export default function DataVizColors() {
         <div style={{ display: "flex", gap: 2, marginBottom: 8 }}>
           {[100, 80, 60, 40, 20, 10].map(pct => (
             <div key={pct} style={{ flex: 1 }}>
-              <div style={{ height: 64, background: t['primary-blue'], opacity: pct / 100,
+              <div style={{ height: 64, background: t['dark-blue'], opacity: pct / 100,
                 border: pct <= 20 ? "1px solid #E5E5E5" : undefined }} />
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600,
                 color: "#111", letterSpacing: "0.06em", paddingTop: 8, textAlign: "center" }}>
@@ -127,7 +127,7 @@ export default function DataVizColors() {
         </div>
         <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#111",
           marginTop: 4 }}>
-          100% → 80% → 60% → 40% → 20% → 10% opacity of Electric Violet
+          100% → 80% → 60% → 40% → 20% → 10% opacity of Dark Blue
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function TypeScale() {
           <div key={s.name} style={{ display: 'grid', gridTemplateColumns: '80px 200px 1fr', gap: 16, padding: '16px 0', borderBottom: '1px solid #E5E5E5', alignItems: 'center' }}>
             <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: '#4D4D4D' }}>{s.size}</div>
             <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: '#4D4D4D' }}>{s.name} · {s.family} {s.weight}</div>
-            <div style={{ fontFamily: s.family + ', sans-serif', fontWeight: s.weight, fontSize: `clamp(14px, ${s.size}, ${s.size})`, letterSpacing: s.ls, color: 'var(--charcoal)', lineHeight: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <div style={{ fontFamily: s.family + ', sans-serif', fontWeight: s.weight, fontSize: `clamp(12px, ${s.size}, ${s.size})`, letterSpacing: s.ls, color: '#111', lineHeight: 1.1, overflow: 'visible' }}>
               {brand.specimens.display96}
             </div>
           </div>

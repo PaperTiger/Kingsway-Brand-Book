@@ -6,6 +6,7 @@ import brand from './brand.config'
 const SECTIONS: Record<string, React.LazyExoticComponent<() => React.ReactElement>> = {
   home:                 lazy(() => import('./sections/home/Cover')),
   'vi-intro':           lazy(() => import('./sections/home/ViIntro')),
+  'logo-main-wordmark': lazy(() => import('./sections/logo/MainWordmark')),
   'logo-horizontal':    lazy(() => import('./sections/logo/FullLogo')),
   'logo-stacked':       lazy(() => import('./sections/logo/StackedLogo')),
   'h-logo-mark':        lazy(() => import('./sections/logo/LogoMark')),
@@ -74,8 +75,15 @@ function useBrandTokens() {
     const lightest = primarySorted[primarySorted.length - 1]
     const overviewDecls = `--fg-overview-bg: ${darkest.hex}; --fg-overview-text: ${lightest.hex}`
 
+    // RGB triplets for tokens used in rgba() in index.css
+    const rgbDecls = Object.entries(brand.tokens).map(([k, v]) => {
+      const c = v.replace('#', '')
+      const r = parseInt(c.slice(0,2),16), g = parseInt(c.slice(2,4),16), b = parseInt(c.slice(4,6),16)
+      return `--${k}-rgb: ${r}, ${g}, ${b}`
+    }).join('; ')
+
     const style = document.createElement('style')
-    style.textContent = `:root { ${tokenDecls}; ${overviewDecls} }`
+    style.textContent = `:root { ${tokenDecls}; ${rgbDecls}; ${overviewDecls} }`
     document.head.appendChild(style)
     document.title = `${brand.meta.nameLine1}${brand.meta.nameLine2 ? ' ' + brand.meta.nameLine2 : ''}, Brand Identity`
     return () => { document.head.removeChild(style) }
@@ -97,13 +105,13 @@ function MobileHeader({ onOpen, onHome }: { onOpen: () => void; onHome: () => vo
           <img
             src={brand.meta.sidebarLogoImage}
             alt={brand.meta.client}
-            style={{ height: 20, width: 'auto', display: 'block' }}
+            style={{ height: 28, width: 'auto', display: 'block' }}
             onError={() => setLogoError(true)}
           />
         )}
         {(!hasLogo || logoError) && (
-          <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 14,
-            letterSpacing: '-0.02em', color: 'var(--charcoal, #111)' }}>
+          <span style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 14,
+            letterSpacing: '-0.02em', color: '#111' }}>
             {brand.meta.nameLine1}{brand.meta.nameLine2 ? ' ' + brand.meta.nameLine2 : ''}
           </span>
         )}
@@ -138,6 +146,7 @@ export default function App() {
     await Promise.all([
       import('./sections/home/Cover'),
       import('./sections/home/ViIntro'),
+      import('./sections/logo/MainWordmark'),
       import('./sections/logo/FullLogo'),
       import('./sections/logo/StackedLogo'),
       import('./sections/logo/LogoMark'),

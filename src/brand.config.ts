@@ -3,6 +3,7 @@ export interface ColorToken {
   hex: string
   textColor: string
   outline?: string
+  pantone?: string
 }
 
 export interface FontFace {
@@ -74,88 +75,84 @@ export interface BrandConfig {
 
 const brand: BrandConfig = {
   typeScale: [
-    { size: '96px', name: 'Display XL',  family: 'DM Sans', weight: 700, ls: '-0.04em',  lh: 0.9 },
-    { size: '73px', name: 'Display L',   family: 'DM Sans', weight: 700, ls: '-0.03em',  lh: 0.9 },
-    { size: '64px', name: 'Display M',   family: 'DM Sans', weight: 700, ls: '-0.03em',  lh: 0.9 },
-    { size: '48px', name: 'Display S',   family: 'DM Sans', weight: 700, ls: '-0.025em', lh: 0.95 },
-    { size: '42px', name: 'Headline XL', family: 'DM Sans', weight: 600, ls: '-0.02em',  lh: 1.0 },
-    { size: '32px', name: 'Headline L',  family: 'DM Sans', weight: 600, ls: '-0.015em', lh: 1.1 },
-    { size: '24px', name: 'Headline M',  family: 'DM Sans', weight: 600, ls: '-0.01em',  lh: 1.2 },
-    { size: '21px', name: 'Headline S',  family: 'DM Sans', weight: 600, ls: '-0.01em',  lh: 1.2 },
-    { size: '18px', name: 'Body XL',     family: 'Inter',   weight: 400, ls: '-0.01em',  lh: 1.55 },
-    { size: '16px', name: 'Body L',      family: 'Inter',   weight: 400, ls: '-0.01em',  lh: 1.6 },
-    { size: '14px', name: 'Body M',      family: 'Inter',   weight: 400, ls: '0',         lh: 1.6 },
-    { size: '12px', name: 'Caption',     family: 'Inter',   weight: 400, ls: '0',         lh: 1.5 },
+    { size: '96px', name: 'Display XL',  family: 'Saans', weight: 600, ls: '-0.03em',  lh: 0.9  },
+    { size: '73px', name: 'Display L',   family: 'Saans', weight: 600, ls: '-0.025em', lh: 0.9  },
+    { size: '64px', name: 'Display M',   family: 'Saans', weight: 600, ls: '-0.02em',  lh: 0.9  },
+    { size: '48px', name: 'Display S',   family: 'Saans', weight: 600, ls: '-0.015em', lh: 0.95 },
+    { size: '42px', name: 'Headline XL', family: 'Saans', weight: 600, ls: '-0.01em',  lh: 1.0  },
+    { size: '32px', name: 'Headline L',  family: 'Saans', weight: 600, ls: '-0.01em',  lh: 1.1  },
+    { size: '24px', name: 'Headline M',  family: 'Saans', weight: 600, ls: '-0.005em', lh: 1.2  },
+    { size: '21px', name: 'Headline S',  family: 'Saans', weight: 600, ls: '0',        lh: 1.2  },
+    { size: '18px', name: 'Body XL',     family: 'Saans', weight: 400, ls: '0',        lh: 1.55 },
+    { size: '16px', name: 'Body L',      family: 'Saans', weight: 400, ls: '0',        lh: 1.6  },
+    { size: '14px', name: 'Body M',      family: 'Saans', weight: 400, ls: '0',        lh: 1.6  },
+    { size: '12px', name: 'Caption',     family: 'Saans', weight: 400, ls: '0',        lh: 1.5  },
   ],
+
   meta: {
-    client:           'Brand 2000',
-    nameLine1:        'Brand',
-    nameLine2:        '2000',
+    client:           'Kingsway',
+    nameLine1:        'Kingsway',
+    nameLine2:        '',
     title:            'Brand guidelines',
     version:          'Version 1.0',
-    date:             'June 2026',
+    date:             'July 2026',
     preparedBy:       'Paper Tiger',
-    sidebarLogoImage: `${import.meta.env.BASE_URL}images/logos/logo-full-primary.svg`,
-    coverSealImage: `${import.meta.env.BASE_URL}images/logos/logo-mark-white.svg`,
+    sidebarLogoImage: `${import.meta.env.BASE_URL}images/logos/kingsway-logo-full-dark-blue.svg`,
+    coverSealImage:   `${import.meta.env.BASE_URL}images/logos/kingsway-mark-white.svg`,
   },
 
   specimens: {
-    display96:        'Brand',
-    display73:        'Beyond the brief',
-    display64:        'Make it matter',
-    display48:        'Identity systems',
-    headline42:       'Design that works as hard as you do',
-    headline32:       'Built for scale. Made to last.',
-    headline24:       'Brand 2000 creates visual identity systems that grow with your business.',
-    headline21:       '12 industries. One trusted partner.',
-    body18:           'Brand 2000 creates visual identity systems built to last.',
-    body16:           'Brand 2000 creates visual identity systems that grow with your business and stand out across every touchpoint.',
-    body14:           'Brand 2000 creates visual identity systems that grow with your business and stand out across every touchpoint. From brand strategy to final artwork, we make every element count.',
-    body12:           'Caption. Brand 2000 creates visual identity systems that last.',
-    sentence:         'Brand 2000 creates visual identity systems built for scale and designed to last.',
-    avoidText:        'Brand 2000 creates identity systems that grow with your business.',
-    avoidTextPart1:   'Brand 2000',
-    avoidTextPart2:   'is creating identity systems since 2000.',
-    fallbackGoogle16: 'Brand 2000 creates visual identity systems built to last. When brand fonts are unavailable, DM Sans provides a clean, modern alternative.',
-    fallbackSystem16: 'Brand 2000 creates visual identity systems built to last. When brand fonts are unavailable, Arial maintains clarity and legibility.',
+    display96:        'Kingsway',
+    display73:        'Building through search',
+    display64:        'Acquire. Build. Compound.',
+    display48:        'Decentralized by design',
+    headline42:       'High-quality service businesses built to last',
+    headline32:       'The only public search fund company in America',
+    headline24:       'Kingsway compounds long-term shareholder value through talented operators and a decentralized model.',
+    headline21:       'Asset-light. Growing. Profitable. Recurring.',
+    body18:           'Kingsway owns and operates a collection of high-quality B2B and B2C services companies built around recurring revenues.',
+    body16:           'Kingsway is the only publicly-traded US company employing the Search Fund model to acquire and build great businesses. Our decentralized model empowers talented operators to compound value over the long term.',
+    body14:           'Kingsway owns and operates a collection of high-quality B2B and B2C services companies that are asset-light, growing, profitable, and that have recurring revenues. We compound long-term shareholder value through our decentralized management model, talented operators, and tax-advantaged structure.',
+    body12:           'Caption. Kingsway owns and operates a collection of high-quality B2B and B2C services companies built around recurring revenues and operational excellence.',
+    sentence:         'Kingsway compounds long-term shareholder value through decentralized management and talented operators.',
+    avoidText:        'Kingsway acquires businesses that compound value over time.',
+    avoidTextPart1:   'Kingsway',
+    avoidTextPart2:   'is building through search since 2010.',
+    fallbackGoogle16: 'Kingsway owns and operates a collection of high-quality B2B and B2C services companies. When brand fonts are unavailable, the Google fallback font provides a clean, modern alternative.',
+    fallbackSystem16: 'Kingsway owns and operates a collection of high-quality B2B and B2C services companies. When brand fonts are unavailable, the system fallback font maintains clarity and legibility.',
   },
 
   tokens: {
-    'primary-blue':     '#8B3DFF',
-    'primary-blue-rgb': '139, 61, 255',
-    'dark-blue':    '#1A0066',
-    charcoal:       '#111111',
-    white:          '#FFFFFF',
-    orange:         '#FF5E14',
-    purple:         '#C44DFF',
-    'pale-green':   '#CCFFCC',
-    'lime-dark':    '#5C705C',
-    green:          '#22C55E',
-    fuscia:         '#FF1493',
-    gray:           '#F3F3F3',
+    'primary-orange': '#F05102',
+    'dark-blue':      '#082C48',
+    'black':          '#010F1D',
+    'white':          '#F7FAFC',
+    'tan':            '#F1EBC9',
+    'mid-blue':       '#3B6684',
+    'pale-blue':      '#BED2E0',
   },
 
   typography: {
-    displayFont: 'DM Sans',
-    bodyFont:    'Inter',
+    displayFont: 'Saans',
+    bodyFont:    'Saans',
     fonts: [
-      { family: 'DM Sans', weight: '300 700', file: '/fonts/DMSans-VariableFont.ttf' },
-      { family: 'Inter',   weight: '300 700', file: '/fonts/Inter-VariableFont_opsz,wght.ttf' },
+      { family: 'Saans', weight: 400, file: 'Saans-TRIAL-Regular.woff2'  },
+      { family: 'Saans', weight: 600, file: 'Saans-TRIAL-SemiBold.woff2' },
+      { family: 'Saans', weight: 700, file: 'Saans-TRIAL-Bold.woff2'     },
     ],
   },
 
   colors: {
     primary: [
-      { name: 'Electric Violet', hex: '#8B3DFF', textColor: '#FFFFFF' },
-      { name: 'Deep Violet',     hex: '#1A0066', textColor: '#FFFFFF' },
-      { name: 'Black',           hex: '#111111', textColor: '#FFFFFF' },
-      { name: 'White',           hex: '#FFFFFF', textColor: '#000000', outline: '1px solid #DADADA' },
+      { name: 'Primary Orange', hex: '#F05102', textColor: '#000000', pantone: 'Orange 021 C' },
+      { name: 'Dark Blue',      hex: '#082C48', textColor: '#F1EBC9', pantone: 'P 108-16 C'  },
+      { name: 'Midnight Blue',  hex: '#010F1D', textColor: '#BED2E0' },
+      { name: 'White',          hex: '#F7FAFC', textColor: '#000000', outline: '1px solid #D0D8DF' },
     ],
     secondary: [
-      { name: 'Coral',          hex: '#FF5E14', textColor: '#FFFFFF' },
-      { name: 'Bright Purple',  hex: '#C44DFF', textColor: '#FFFFFF' },
-      { name: 'Lime',           hex: '#CCFFCC', textColor: '#000000' },
-      { name: 'Gray',           hex: '#F3F3F3', textColor: '#000000', outline: '1px solid #DADADA' },
+      { name: 'Tan',       hex: '#F1EBC9', textColor: '#082C48', pantone: 'P 2-1 C'     },
+      { name: 'Mid Blue',  hex: '#3B6684', textColor: '#FFFFFF',  pantone: 'P 111-14 C'  },
+      { name: 'Pale Blue', hex: '#BED2E0', textColor: '#082C48', pantone: 'P 117-9 C'   },
     ],
   },
 
@@ -167,7 +164,8 @@ const brand: BrandConfig = {
     {
       group: 'Logo & mark',
       items: [
-        { label: 'Full logo',        id: 'logo-horizontal' },
+        { label: 'Main wordmark',    id: 'logo-main-wordmark' },
+        { label: 'Wordmark and Mark', id: 'logo-horizontal' },
         { label: 'Stacked logo',     id: 'logo-stacked' },
         { label: 'Logo mark',        id: 'h-logo-mark' },
         { label: 'Avatar & favicon', id: 'logo-avatar' },
@@ -178,11 +176,11 @@ const brand: BrandConfig = {
     {
       group: 'Color',
       items: [
-        { label: 'Introduction',              id: 'color-intro' },
-        { label: 'Primary palette',           id: 'primary-palette' },
-        { label: 'Secondary palette',         id: 'secondary-palette' },
+        { label: 'Introduction',                 id: 'color-intro' },
+        { label: 'Primary palette',              id: 'primary-palette' },
+        { label: 'Secondary palette',            id: 'secondary-palette' },
         { label: 'Combinations & accessibility', id: 'color-combinations' },
-        { label: 'Color pathways',            id: 'color-pathways' },
+        { label: 'Color pathways',               id: 'color-pathways' },
       ],
     },
     {
@@ -193,24 +191,24 @@ const brand: BrandConfig = {
           label: 'Display & body', id: 'fg-overview',
           groupId: 'nav-fg-group', subId: 'nav-fg-sub',
           children: [
-            { label: 'Overview',      id: 'fg-overview' },
-            { label: 'Usage',         id: 'fg-usage' },
-            { label: 'Type specimen', id: 'fg-specimen' },
-            { label: 'Size & scale',  id: 'fg-scale' },
+            { label: 'Overview',      id: 'fg-overview'  },
+            { label: 'Usage',         id: 'fg-usage'     },
+            { label: 'Type specimen', id: 'fg-specimen'  },
+            { label: 'Size & scale',  id: 'fg-scale'     },
           ],
         },
         { label: 'Google fallback', id: 'google-fallback' },
-        { label: 'System fallback', id: 'type-fallback' },
-        { label: 'What to avoid',   id: 'type-avoid' },
+        { label: 'System fallback', id: 'type-fallback'   },
+        { label: 'What to avoid',   id: 'type-avoid'      },
       ],
     },
     {
       group: 'Photography',
       items: [
-        { label: 'Introduction', id: 'photo-intro' },
+        { label: 'Introduction', id: 'photo-intro'    },
         { label: 'Examples',     id: 'photo-examples' },
-        { label: 'Dos',          id: 'photo-dos' },
-        { label: "Don'ts",       id: 'photo-donts' },
+        { label: 'Dos',          id: 'photo-dos'      },
+        { label: "Don'ts",       id: 'photo-donts'    },
       ],
     },
     {
@@ -223,7 +221,7 @@ const brand: BrandConfig = {
     {
       group: 'Applications',
       items: [
-        { label: 'Introduction', id: 'app-intro' },
+        { label: 'Introduction', id: 'app-intro'    },
         { label: 'Examples',     id: 'app-examples' },
       ],
     },
@@ -238,7 +236,6 @@ const brand: BrandConfig = {
   ],
 }
 
-// Derived palette extremes — used for auto-theming fullbleed sections (e.g. TypeOverview)
 function _lum(hex: string): number {
   const c = hex.replace('#', '')
   const r = parseInt(c.slice(0, 2), 16) / 255

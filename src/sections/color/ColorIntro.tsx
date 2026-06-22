@@ -8,16 +8,16 @@ export default function ColorIntro() {
       <div style={{ display: 'flex', flexDirection: 'column', padding: 32, boxSizing: 'border-box' }}>
         <div className="section-label">Color</div>
         <p style={{
-          fontFamily: 'DM Sans, sans-serif', fontWeight: 300,
+          fontFamily: 'Saans, sans-serif', fontWeight: 300,
           fontSize: 'clamp(24px,3.2vw,48px)', lineHeight: 1.0, letterSpacing: '-0.02em',
-          color: 'var(--charcoal)', maxWidth: 720, margin: '16px 0 0',
+          color: '#111', maxWidth: 720, margin: '16px 0 0',
         }}>
           Color with purpose.
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.65,
-            color: 'var(--charcoal)', margin: 0 }}>
+            color: '#111', margin: 0 }}>
             The {brand.meta.client} color system leads with a confident primary palette,
             expressive and forward-thinking. Secondary colors provide range for accent
             moments without diluting the core brand presence.

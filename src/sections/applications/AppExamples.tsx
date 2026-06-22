@@ -4,7 +4,7 @@ export default function AppExamples() {
       <div className="section-label">Applications</div>
       <h2 className="section-title">Examples</h2>
       <p className="section-intro">
-        The Brand 2000 system applied across pitch decks, social media, merchandise,
+        The Kingsway system applied across pitch decks, social media, merchandise,
         and digital media. Examples will be updated as real assets are produced.
       </p>
       <div className="masonry-grid" style={{ margin: "0 0 80px" }}>
@@ -18,7 +18,7 @@ export default function AppExamples() {
         <img src="https://picsum.photos/seed/208/600/600" alt="Application example" />
       </div>
       <div className="placeholder-badge">
-        <strong>Placeholder mockups.</strong> Replace with real Brand 2000 application examples before publishing.
+        <strong>Placeholder mockups.</strong> Replace with real Kingsway application examples before publishing.
       </div>
     </div>
   )

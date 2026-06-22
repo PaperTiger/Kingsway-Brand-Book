@@ -28,7 +28,7 @@ export default function PhotoExamples() {
         <img src="https://picsum.photos/seed/117/600/400" alt="Photography example" />
       </div>
       <div className="placeholder-badge">
-        <strong>Placeholder imagery.</strong> Replace with real Brand 2000 photography before publishing.
+        <strong>Placeholder imagery.</strong> Replace with real Kingsway photography before publishing.
       </div>
     </div>
   )

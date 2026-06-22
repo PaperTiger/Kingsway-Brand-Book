@@ -5,13 +5,13 @@ import ClearspaceDiagram from '../../components/ui/ClearspaceDiagram'
 const t = brand.tokens
 
 const combos = [
-  { bg: '#FFFFFF',          mark: t['primary-blue'], wm: t['charcoal'], inner: '#fff', label: 'White',         lbl: '#111' },
-  { bg: '#F3F3F3',          mark: t['primary-blue'], wm: t['charcoal'], inner: '#fff', label: 'Gray',          lbl: '#111' },
-  { bg: t['pale-green'],    mark: '#111', wm: '#111', inner: '#fff',                   label: 'Lime',          lbl: '#111' },
-  { bg: t['primary-blue'],  mark: '#fff', wm: '#fff', inner: t['primary-blue'],        label: 'Violet',        lbl: '#fff' },
-  { bg: t['orange'],        mark: '#111', wm: '#111', inner: '#fff',                   label: 'Coral',         lbl: '#fff' },
-  { bg: t['dark-blue'],     mark: '#fff', wm: '#fff', inner: t['primary-blue'],        label: 'Deep Violet',   lbl: '#fff' },
-  { bg: '#111111',          mark: '#fff', wm: '#fff', inner: '#111',                   label: 'Black',         lbl: '#fff' },
+  { bg: t['white'],          mark: t['dark-blue'],  wm: t['dark-blue'],  label: 'White',          lbl: t['dark-blue']  },
+  { bg: t['tan'],            mark: t['dark-blue'],  wm: t['dark-blue'],  label: 'Tan',             lbl: t['dark-blue']  },
+  { bg: t['pale-blue'],      mark: t['dark-blue'],  wm: t['dark-blue'],  label: 'Pale Blue',       lbl: t['dark-blue']  },
+  { bg: t['primary-orange'], mark: '#000000',        wm: '#000000',       label: 'Primary Orange',  lbl: '#000000'       },
+  { bg: t['mid-blue'],       mark: '#FFFFFF',       wm: '#FFFFFF',       label: 'Mid Blue',        lbl: '#FFFFFF'       },
+  { bg: t['dark-blue'],      mark: t['tan'],         wm: t['tan'],        label: 'Dark Blue',       lbl: t['tan']        },
+  { bg: t['black'],          mark: t['pale-blue'],  wm: t['pale-blue'],  label: 'Midnight Blue',   lbl: t['pale-blue']  },
 ]
 
 export default function StackedLogo() {
@@ -19,7 +19,7 @@ export default function StackedLogo() {
     <div>
       {/* Hero header */}
       <div className="logo-hero" style={{ background: t['dark-blue'], minHeight: 280 }}>
-        <StackedLogoSvg markFill="#fff" wordmarkFill="#fff" innerTextFill={t['primary-blue']} style={{ maxHeight: 160, width: 'auto' }} />
+        <StackedLogoSvg markFill="#fff" wordmarkFill="#fff" style={{ maxHeight: 160, width: 'auto' }} />
       </div>
 
       <div className="page">
@@ -36,12 +36,12 @@ export default function StackedLogo() {
 
         {/* Clearspace */}
         <div className="content-block">
-          <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 12px', color: '#111' }}>Clearspace</h3>
+          <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 12px', color: '#111' }}>Clearspace</h3>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
             x equals ½ the height of the {brand.meta.client} mark. Maintain this distance on all four sides.
           </p>
           <ClearspaceDiagram
-            logoSrc={`${import.meta.env.BASE_URL}images/logos/logo-stacked-primary.svg`}
+            logoSrc={`${import.meta.env.BASE_URL}images/logos/kingsway-stacked-dark-blue.svg`}
             logoAlt="Stacked logo clearspace"
             csX={75} logoMaxHeight={150}
             defLabel={`½ the height of the ${brand.meta.client} mark`}
@@ -50,11 +50,11 @@ export default function StackedLogo() {
 
         {/* Approved color combinations */}
         <div style={{ marginTop: 48, paddingTop: 0 }}>
-          <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 16px', color: '#111' }}>Approved color combinations</h3>
+          <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 16px', color: '#111' }}>Approved color combinations</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 0 }}>
             {combos.map(c => (
               <div key={c.label} style={{ background: c.bg, padding: '32px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, justifyContent: 'center' }}>
-                <StackedLogoSvg markFill={c.mark} wordmarkFill={c.wm} innerTextFill={c.inner} style={{ maxHeight: 80, width: 'auto' }} />
+                <StackedLogoSvg markFill={c.mark} wordmarkFill={c.wm} style={{ maxHeight: 80, width: 'auto' }} />
                 <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', color: c.lbl, textTransform: 'uppercase', opacity: 0.7 }}>{c.label}</span>
               </div>
             ))}

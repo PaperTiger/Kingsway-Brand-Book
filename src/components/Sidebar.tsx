@@ -72,8 +72,8 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onPr
             />
           )}
           {(!hasLogo || logoError) && (
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 15,
-              letterSpacing: '-0.02em', color: 'var(--charcoal, #111)', lineHeight: 1 }}>
+            <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
+              letterSpacing: '-0.02em', color: '#111', lineHeight: 1 }}>
               {brand.meta.nameLine1}{brand.meta.nameLine2 ? ' ' + brand.meta.nameLine2 : ''}
             </div>
           )}
