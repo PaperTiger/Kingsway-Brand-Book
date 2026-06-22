@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "VITE_BASE_PATH=/Brand-Book-Template/ npm run build",
+    "predeploy": "VITE_BASE_PATH=/Kingsway-Brand-Book/ npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
