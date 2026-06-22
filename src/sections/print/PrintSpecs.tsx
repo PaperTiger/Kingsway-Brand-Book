@@ -29,11 +29,11 @@ function SpecTable({ rows }: { rows: { spec: string; value: string }[] }) {
           padding: "13px 24px",
           borderBottom: i < rows.length - 1 ? "1px solid #E5E5E5" : undefined,
         }}>
-          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 700,
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, fontWeight: 700,
             color: "#111", textTransform: "uppercase", letterSpacing: "0.05em", paddingTop: 1 }}>
             {row.spec}
           </div>
-          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#111",
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
             lineHeight: 1.55 }}>{row.value}</div>
         </div>
       ))}
@@ -73,7 +73,7 @@ export default function PrintSpecs() {
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40, marginBottom: 56 }}>
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Print safe area</h3>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 28, maxWidth: 520 }}>
           For any printed document using the brand identity, always set up bleed and safe area
           zones in your layout application before placing artwork.
@@ -81,7 +81,7 @@ export default function PrintSpecs() {
         <div className="print-safe-area-box" style={{ border: "1px solid #E5E5E5", padding: 40, display: "inline-flex",
           alignItems: "center", gap: 40 }}>
           <svg viewBox="0 0 280 210" width="280" height="210"
-            style={{ display: "block", flexShrink: 0, fontFamily: "Inter, sans-serif" }}>
+            style={{ display: "block", flexShrink: 0, fontFamily: "Saans, sans-serif" }}>
             {/* Bleed */}
             <rect x="8" y="8" width="264" height="194"
               fill={`color-mix(in srgb, ${t['dark-blue']} 7%, white)`}
@@ -125,7 +125,7 @@ export default function PrintSpecs() {
                   <line x1="0" y1="5" x2="24" y2="5" stroke={item.color} strokeWidth="1.5"
                     strokeDasharray={item.dash ? "4,3" : undefined} />
                 </svg>
-                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#111",
+                <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "#111",
                   lineHeight: 1.4 }}>{item.label}</div>
               </div>
             ))}
@@ -137,7 +137,7 @@ export default function PrintSpecs() {
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40 }}>
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Export this brand book as PDF</h3>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 24, maxWidth: 560 }}>
           Use the button below (or the sidebar Print button) to export the complete brand book
           as a PDF. All sections are included, each starting on a new page.
@@ -164,8 +164,8 @@ export default function PrintSpecs() {
           padding: "16px 20px", maxWidth: 560 }}>
           <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
             color: t['dark-blue'], marginBottom: 6 }}>Browser tip</div>
-          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#111",
-            lineHeight: 1.65 }}>
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
+            lineHeight: 1.6 }}>
             In the print dialog, set <strong>Destination → Save as PDF</strong>, margins to
             <strong> None</strong>, and enable <strong>Background graphics</strong> to preserve
             brand colors. Use A4 paper size for best results.

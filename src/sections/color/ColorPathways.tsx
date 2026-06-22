@@ -86,13 +86,13 @@ export default function ColorPathways() {
                 }}
               >
                 <div style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: 9,
+                  fontFamily: 'Saans, sans-serif', fontSize: 9,
                   color: step.textHex, lineHeight: 1.3, opacity: 0.7, marginBottom: 1,
                 }}>
                   {step.label}
                 </div>
                 <div style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: step.anchor ? 11 : 9,
+                  fontFamily: 'Saans, sans-serif', fontSize: step.anchor ? 11 : 9,
                   fontWeight: step.anchor ? 700 : 400,
                   color: step.textHex,
                 }}>

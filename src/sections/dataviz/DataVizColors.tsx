@@ -74,9 +74,9 @@ export default function DataVizColors() {
             <div style={{ padding: "16px 18px" }}>
               <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
                 color: "#111", marginBottom: 4 }}>{s.name}</div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 600,
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, fontWeight: 600,
                 color: "#111", letterSpacing: "0.06em", marginBottom: 8 }}>{s.hex.toUpperCase()}</div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#111",
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "#111",
                 lineHeight: 1.55 }}>{s.note}</div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function DataVizColors() {
             }}>
               <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
                 color: t['dark-blue'], marginBottom: 8 }}>{r.heading}</div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#111",
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
                 lineHeight: 1.6 }}>{r.body}</div>
             </div>
           ))}
@@ -108,7 +108,7 @@ export default function DataVizColors() {
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40 }}>
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Sequential palette</h3>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#111',
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
           lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
           When a single data series needs value differentiation (heat maps, ranked lists, or
           choropleth maps), use opacity steps of the primary color.
@@ -118,14 +118,14 @@ export default function DataVizColors() {
             <div key={pct} style={{ flex: 1 }}>
               <div style={{ height: 64, background: t['dark-blue'], opacity: pct / 100,
                 border: pct <= 20 ? "1px solid #E5E5E5" : undefined }} />
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600,
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600,
                 color: "#111", letterSpacing: "0.06em", paddingTop: 8, textAlign: "center" }}>
                 {pct}%
               </div>
             </div>
           ))}
         </div>
-        <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#111",
+        <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "#111",
           marginTop: 4 }}>
           100% → 80% → 60% → 40% → 20% → 10% opacity of Dark Blue
         </div>

@@ -39,7 +39,7 @@ export default function LogoAvatar() {
               }}>
                 <MarkSimpleSvg markFill={a.mark} style={{ width: "44%", height: "auto" }} />
               </div>
-              <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", fontFamily: "Inter, sans-serif" }}>{a.label}</div>
+              <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", fontFamily: "Saans, sans-serif" }}>{a.label}</div>
             </div>
           ))}
         </div>
@@ -50,7 +50,7 @@ export default function LogoAvatar() {
         <div className="section-label" style={{ marginBottom: 24 }}>Favicons: Mark Simple</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, maxWidth: 760 }}>
           <div>
-            <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", marginBottom: 16, fontFamily: "Inter, sans-serif" }}>On light</div>
+            <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", marginBottom: 16, fontFamily: "Saans, sans-serif" }}>On light</div>
             <div style={{ display: "flex", alignItems: "flex-end", gap: 28 }}>
               {faviconSizes.map(size => (
                 <div key={size} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
@@ -60,13 +60,13 @@ export default function LogoAvatar() {
                         <MarkSimpleSvg markFill={t['dark-blue']} style={{ width: "60%", height: "60%" }} />
                       </div>
                   }
-                  <div style={{ fontSize: 10, color: "#111", fontFamily: "Inter, sans-serif" }}>{size}px</div>
+                  <div style={{ fontSize: 10, color: "#111", fontFamily: "Saans, sans-serif" }}>{size}px</div>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", marginBottom: 16, fontFamily: "Inter, sans-serif" }}>On dark</div>
+            <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", marginBottom: 16, fontFamily: "Saans, sans-serif" }}>On dark</div>
             <div style={{ display: "flex", alignItems: "flex-end", gap: 28 }}>
               {faviconSizes.map(size => (
                 <div key={size} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
@@ -76,7 +76,7 @@ export default function LogoAvatar() {
                         <MarkSimpleSvg markFill={t['pale-blue']} style={{ width: "60%", height: "60%" }} />
                       </div>
                   }
-                  <div style={{ fontSize: 10, color: "#111", fontFamily: "Inter, sans-serif" }}>{size}px</div>
+                  <div style={{ fontSize: 10, color: "#111", fontFamily: "Saans, sans-serif" }}>{size}px</div>
                 </div>
               ))}
             </div>

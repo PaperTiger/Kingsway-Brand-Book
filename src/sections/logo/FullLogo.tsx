@@ -37,7 +37,7 @@ export default function FullLogo() {
         {/* Clearspace */}
         <div className="content-block">
           <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 12px', color: '#111' }}>Clearspace</h3>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
             Maintain a minimum clearspace of <strong>x</strong> on all sides, where x equals half the height of the {brand.meta.client} mark.
           </p>
           <ClearspaceDiagram
@@ -55,7 +55,7 @@ export default function FullLogo() {
           {combos.map(c => (
             <div key={c.label} style={{ background: c.bg, padding: '28px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, aspectRatio: '4/3', justifyContent: 'center' }}>
               <FullLogoSvg markFill={c.mark} wordmarkFill={c.wm} style={{ maxHeight: 40, width: 'auto' }} />
-              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', color: c.lbl, textTransform: 'uppercase', opacity: 0.7 }}>{c.label}</span>
+              <span style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', color: c.lbl, textTransform: 'uppercase', opacity: 0.7 }}>{c.label}</span>
             </div>
           ))}
           </div>

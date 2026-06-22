@@ -36,11 +36,11 @@ export default function LogoMark() {
         {/* Mark variation: circle mark */}
         <div className="content-block" style={{ marginBottom: 56 }}>
           <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 19, margin: '0 0 8px', color: '#111' }}>Mark</h3>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
             The mark in its circle is the primary standalone symbol. Use it for social avatars, app icons at larger sizes, and graphic accents where the full lockup cannot fit.
           </p>
           <h4 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 15, margin: '0 0 12px', color: '#111' }}>Clearspace</h4>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
             x equals ½ the height of the {brand.meta.client} mark. Maintain this distance on all four sides.
           </p>
           <ClearspaceDiagram
@@ -54,7 +54,7 @@ export default function LogoMark() {
         {/* Mark variation: Mark Simple */}
         <div className="content-block" style={{ marginBottom: 56 }}>
           <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 19, margin: '0 0 8px', color: '#111' }}>Mark Simple</h3>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
             Mark Simple is the chevron without the enclosing circle. Use it for favicons, small app icons (16px and below), loading spinners, and any context where the circle detail would disappear at small sizes.
           </p>
 
@@ -72,7 +72,7 @@ export default function LogoMark() {
           </div>
 
           <h4 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 15, margin: '0 0 12px', color: '#111' }}>Clearspace</h4>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
             x equals ½ the height of the {brand.meta.client} mark simple. Maintain this distance on all four sides.
           </p>
           <ClearspaceDiagram
@@ -90,7 +90,7 @@ export default function LogoMark() {
             {combos.map(c => (
               <div key={c.label} style={{ background: c.bg, padding: '32px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, justifyContent: 'center', aspectRatio: '1' }}>
                 <LogoMarkSvg markFill={c.mark} style={{ maxHeight: 80, width: 'auto' }} />
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', color: c.lbl, textTransform: 'uppercase', opacity: 0.7 }}>{c.label}</span>
+                <span style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', color: c.lbl, textTransform: 'uppercase', opacity: 0.7 }}>{c.label}</span>
               </div>
             ))}
           </div>

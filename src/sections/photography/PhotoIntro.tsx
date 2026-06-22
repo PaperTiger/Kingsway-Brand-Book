@@ -10,7 +10,7 @@ export default function PhotoIntro() {
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.65,
+          <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 16, lineHeight: 1.6,
             color: '#111', margin: 0 }}>
             Kingsway imagery should feel real and human. Favor candid teams at work,
             real environments, and clean product shots over staged stock. Photography builds

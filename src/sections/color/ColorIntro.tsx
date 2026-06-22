@@ -16,7 +16,7 @@ export default function ColorIntro() {
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.65,
+          <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 16, lineHeight: 1.6,
             color: '#111', margin: 0 }}>
             The {brand.meta.client} color system leads with a confident primary palette,
             expressive and forward-thinking. Secondary colors provide range for accent
@@ -36,7 +36,7 @@ export default function ColorIntro() {
             ...(c.outline ? { boxShadow: 'inset 0 0 0 1px #DADADA' } : {}),
           }}>
             <span style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600,
+              fontFamily: 'Saans, sans-serif', fontSize: 11, fontWeight: 600,
               letterSpacing: '0.06em', textTransform: 'uppercase',
               color: c.textColor,
             }}>

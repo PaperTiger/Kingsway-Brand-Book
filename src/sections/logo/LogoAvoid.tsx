@@ -72,8 +72,8 @@ export default function LogoAvoid() {
               }
             </div>
             <div style={{ padding: "20px 24px" }}>
-              <div style={{ fontFamily: "Inter, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", color: "#CC1188", textTransform: "uppercase", marginBottom: 8 }}>{item.heading}</div>
-              <div style={{ fontFamily: "Inter, sans-serif", fontSize: 13, color: "#111", lineHeight: 1.5 }}>{item.body}</div>
+              <div style={{ fontFamily: "Saans, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", color: "#CC1188", textTransform: "uppercase", marginBottom: 8 }}>{item.heading}</div>
+              <div style={{ fontFamily: "Saans, sans-serif", fontSize: 13, color: "#111", lineHeight: 1.5 }}>{item.body}</div>
             </div>
           </div>
         ))}

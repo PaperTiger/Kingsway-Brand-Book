@@ -1,5 +1,5 @@
 import brand from '../../brand.config'
-import { FullLogoSvg } from '../../components/ui/LogoSvg'
+import { MainWordmarkSvg } from '../../components/ui/LogoSvg'
 
 function hexToRgb(hex: string): [number,number,number] {
   const h = hex.replace('#','')
@@ -29,47 +29,20 @@ interface Combo {
   bgHex: string
   fgHex: string
   label: string
-  markFill: string
   wordmarkFill: string
-  innerTextFill: string
-  outline?: boolean
 }
 
 const combos: Combo[] = [
-  {
-    bgHex: t['primary-orange'], fgHex: '#000000', label: 'Primary Orange / Black',
-    markFill: '#000000', wordmarkFill: '#000000', innerTextFill: t['primary-orange'],
-  },
-  {
-    bgHex: t['dark-blue'], fgHex: t['tan'], label: 'Dark Blue / Tan',
-    markFill: t['tan'], wordmarkFill: t['tan'], innerTextFill: t['dark-blue'],
-  },
-  {
-    bgHex: t['black'], fgHex: t['pale-blue'], label: 'Midnight Blue / Pale Blue',
-    markFill: t['pale-blue'], wordmarkFill: t['pale-blue'], innerTextFill: t['black'],
-  },
-  {
-    bgHex: t['white'], fgHex: '#000000', label: 'White / Black',
-    markFill: '#000000', wordmarkFill: '#000000', innerTextFill: t['white'],
-    outline: true,
-  },
-  {
-    bgHex: t['tan'], fgHex: t['dark-blue'], label: 'Tan / Dark Blue',
-    markFill: t['dark-blue'], wordmarkFill: t['dark-blue'], innerTextFill: t['tan'],
-  },
-  {
-    bgHex: t['mid-blue'], fgHex: '#FFFFFF', label: 'Mid Blue / White',
-    markFill: '#FFFFFF', wordmarkFill: '#FFFFFF', innerTextFill: t['mid-blue'],
-  },
-  {
-    bgHex: t['pale-blue'], fgHex: t['dark-blue'], label: 'Pale Blue / Dark Blue',
-    markFill: t['dark-blue'], wordmarkFill: t['dark-blue'], innerTextFill: t['pale-blue'],
-  },
-  {
-    bgHex: t['white'], fgHex: t['dark-blue'], label: 'White / Dark Blue',
-    markFill: t['dark-blue'], wordmarkFill: t['dark-blue'], innerTextFill: t['white'],
-    outline: true,
-  },
+  { bgHex: t['primary-orange'], fgHex: '#000000',      label: 'Primary Orange / Black',    wordmarkFill: '#000000' },
+  { bgHex: t['dark-blue'],      fgHex: t['tan'],       label: 'Dark Blue / Tan',            wordmarkFill: t['tan'] },
+  { bgHex: t['black'],          fgHex: t['pale-blue'], label: 'Midnight Blue / Pale Blue',  wordmarkFill: t['pale-blue'] },
+  { bgHex: t['white'],          fgHex: '#000000',      label: 'White / Black',              wordmarkFill: '#000000' },
+  { bgHex: t['tan'],            fgHex: t['dark-blue'], label: 'Tan / Dark Blue',            wordmarkFill: t['dark-blue'] },
+  { bgHex: t['mid-blue'],       fgHex: '#FFFFFF',      label: 'Mid Blue / White',           wordmarkFill: '#FFFFFF' },
+  { bgHex: t['pale-blue'],      fgHex: t['dark-blue'], label: 'Pale Blue / Dark Blue',      wordmarkFill: t['dark-blue'] },
+  { bgHex: t['white'],          fgHex: t['dark-blue'], label: 'White / Dark Blue',          wordmarkFill: t['dark-blue'] },
+  { bgHex: t['dark-blue'],      fgHex: '#FFFFFF',      label: 'Dark Blue / White',          wordmarkFill: '#FFFFFF' },
+  { bgHex: t['black'],          fgHex: t['tan'],       label: 'Midnight Blue / Tan',        wordmarkFill: t['tan'] },
 ]
 
 export default function ColorCombinations() {
@@ -97,27 +70,24 @@ export default function ColorCombinations() {
               padding: 'clamp(20px, 2.5vw, 40px)',
               display: 'flex', flexDirection: 'column',
               minHeight: 'clamp(180px, 20vw, 280px)',
-              ...(c.outline ? { boxShadow: 'inset 0 0 0 1px #C8C8C8' } : {}),
             }}>
               <div style={{ flex: 1, paddingBottom: 'clamp(16px, 2vw, 28px)' }}>
-                <FullLogoSvg
-                  markFill={c.markFill}
+                <MainWordmarkSvg
                   wordmarkFill={c.wordmarkFill}
-                  innerTextFill={c.innerTextFill}
                   style={{ width: '100%', maxWidth: 'clamp(140px, 16vw, 220px)', height: 'auto' }}
                 />
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
                 <span style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 500,
+                  fontFamily: 'Saans, sans-serif', fontSize: 10, fontWeight: 500,
                   color: c.fgHex, letterSpacing: '0.02em',
                 }}>
                   {c.label}
                 </span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
                   <span style={{
-                    fontFamily: 'Inter, sans-serif', fontSize: 9, fontWeight: 700,
+                    fontFamily: 'Saans, sans-serif', fontSize: 9, fontWeight: 700,
                     letterSpacing: '0.04em',
                     color: c.bgHex, background: c.fgHex,
                     padding: '3px 7px', borderRadius: 2,
@@ -130,7 +100,7 @@ export default function ColorCombinations() {
                     )}
                     {level}
                   </span>
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 500, color: c.fgHex }}>
+                  <span style={{ fontFamily: 'Saans, sans-serif', fontSize: 10, fontWeight: 500, color: c.fgHex }}>
                     {ratio}:1
                   </span>
                 </div>

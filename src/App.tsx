@@ -275,7 +275,7 @@ export default function App() {
               <button
                 onClick={handleExitPrint}
                 style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 500,
+                  fontFamily: 'Saans, sans-serif', fontSize: 12, fontWeight: 500,
                   background: 'transparent', color: 'rgba(255,255,255,0.7)',
                   border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer',
                   padding: '6px 14px', borderRadius: 4, flexShrink: 0,
@@ -287,7 +287,7 @@ export default function App() {
                 onClick={handleDownloadPdf}
                 disabled={pdfGenerating}
                 style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600,
+                  fontFamily: 'Saans, sans-serif', fontSize: 12, fontWeight: 600,
                   background: pdfGenerating ? 'rgba(255,255,255,0.5)' : '#fff',
                   color: '#111', border: 'none',
                   cursor: pdfGenerating ? 'default' : 'pointer',
@@ -329,7 +329,7 @@ export default function App() {
           </div>
         ) : (
           <>
-            <Suspense fallback={<div style={{ padding: 64, fontFamily: 'Inter, sans-serif', color: '#999' }}>Loading…</div>}>
+            <Suspense fallback={<div style={{ padding: 64, fontFamily: 'Saans, sans-serif', color: '#999' }}>Loading…</div>}>
               <Section />
             </Suspense>
             <PageNav currentPage={currentPage} onNavigate={navigate} />

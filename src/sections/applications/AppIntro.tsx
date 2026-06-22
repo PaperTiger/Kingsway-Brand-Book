@@ -3,14 +3,14 @@ export default function AppIntro() {
     <div className="portrait-intro">
       <div style={{ display: 'flex', flexDirection: 'column', padding: 32, boxSizing: 'border-box' }}>
         <div className="section-label">Applications</div>
-        <p style={{ fontFamily: 'Saans, sans-serif', fontWeight: 300,
+        <p style={{ fontFamily: 'Saans, sans-serif', fontWeight: 600,
           fontSize: 'clamp(24px,3.2vw,48px)', lineHeight: 1.0, letterSpacing: '-0.02em',
           color: '#111', maxWidth: 720, margin: '16px 0 0' }}>
           Every surface. Every scale.
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.65,
+          <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 16, lineHeight: 1.6,
             color: '#111', margin: 0 }}>
             The Kingsway brand is judged in its most everyday moments: a pitch deck slide,
             a reporting dashboard, a social ad, a conference booth. This section shows how the

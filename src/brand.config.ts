@@ -147,7 +147,7 @@ const brand: BrandConfig = {
       { name: 'Primary Orange', hex: '#F05102', textColor: '#000000', pantone: 'Orange 021 C' },
       { name: 'Dark Blue',      hex: '#082C48', textColor: '#F1EBC9', pantone: 'P 108-16 C'  },
       { name: 'Midnight Blue',  hex: '#010F1D', textColor: '#BED2E0' },
-      { name: 'White',          hex: '#F7FAFC', textColor: '#000000', outline: '1px solid #D0D8DF' },
+      { name: 'White',          hex: '#F7FAFC', textColor: '#000000' },
     ],
     secondary: [
       { name: 'Tan',       hex: '#F1EBC9', textColor: '#082C48', pantone: 'P 2-1 C'     },
