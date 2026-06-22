@@ -1,4 +1,4 @@
-import brand, { darkestPrimary, lightestPrimary } from '../../brand.config'
+import brand, { darkestPrimary } from '../../brand.config'
 
 const df = brand.typography.displayFont
 const bf = brand.typography.bodyFont

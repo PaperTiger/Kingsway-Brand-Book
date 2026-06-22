@@ -71,8 +71,7 @@ function useBrandTokens() {
     const tokenDecls = Object.entries(brand.tokens).map(([k, v]) => `--${k}: ${v}`).join('; ')
 
     const primarySorted = [...brand.colors.primary].sort((a, b) => hexLuminance(a.hex) - hexLuminance(b.hex))
-    const darkest  = primarySorted[0]
-    const lightest = primarySorted[primarySorted.length - 1]
+    const darkest = primarySorted[0]
     const overviewDecls = `--fg-overview-bg: ${darkest.hex}; --fg-overview-text: ${brand.tokens['pale-blue']}`
 
     // RGB triplets for tokens used in rgba() in index.css
