@@ -29,16 +29,16 @@ function donutSegment(
 const BAR_DATA_LIGHT = [
   { label: 'Q1', value: 63, color: t['dark-blue'] },
   { label: 'Q2', value: 82, color: t['primary-orange'] },
-  { label: 'Q3', value: 47, color: t['mid-blue'] },
+  { label: 'Q3', value: 47, color: '#458FCE' },
   { label: 'Q4', value: 91, color: '#9D9152' },
-  { label: 'Q5', value: 74, color: '#554622' },
+  { label: 'Q5', value: 74, color: '#441109' },
 ]
 
 const BAR_DATA_DARK = [
   { label: 'Q1', value: 63, color: t['pale-blue'] },
   { label: 'Q2', value: 82, color: t['primary-orange'] },
-  { label: 'Q3', value: 47, color: t['tan'] },
-  { label: 'Q4', value: 91, color: '#FFC099' },
+  { label: 'Q3', value: 47, color: '#458FCE' },
+  { label: 'Q4', value: 91, color: '#9D9152' },
   { label: 'Q5', value: 74, color: t['white'] },
 ]
 
@@ -54,10 +54,10 @@ function BarChart({ data, dark = false }: { data: BarDatum[]; dark?: boolean }) 
   const totalW = data.length * barW + (data.length - 1) * gap
   const startX = ml + (cW - totalW) / 2
   const gridPcts = [0, 25, 50, 75, 100]
-  const gridColor  = dark ? 'rgba(255,255,255,0.12)' : '#E5E5E5'
-  const labelColor = dark ? 'rgba(255,255,255,0.75)'  : '#111'
-  const xLabelColor = dark ? 'rgba(255,255,255,0.75)' : '#111'
-  const valueLabelColor = dark ? 'rgba(255,255,255,0.9)' : '#111111'
+  const gridColor       = dark ? 'rgba(255,255,255,0.12)' : 'rgba(8,44,72,0.15)'
+  const labelColor      = dark ? 'rgba(255,255,255,0.75)' : '#082C48'
+  const xLabelColor     = dark ? 'rgba(255,255,255,0.75)' : '#082C48'
+  const valueLabelColor = dark ? 'rgba(255,255,255,0.9)'  : '#082C48'
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%"
@@ -66,8 +66,8 @@ function BarChart({ data, dark = false }: { data: BarDatum[]; dark?: boolean }) 
         const y = mt + cH - (pct / 100) * cH
         return (
           <g key={pct}>
-            <line x1={ml} y1={y} x2={W - mr} y2={y} stroke={gridColor} strokeWidth="1" />
-            <text x={ml - 6} y={y + 4} textAnchor="end" fontSize="10" fill={labelColor}>{pct}</text>
+            <line x1={ml} y1={y} x2={W - mr} y2={y} stroke={gridColor} strokeWidth="0.5" />
+            <text x={ml - 6} y={y + 4} textAnchor="end" fontSize="10" fontWeight="600" fill={labelColor}>{pct}</text>
           </g>
         )
       })}
@@ -79,7 +79,7 @@ function BarChart({ data, dark = false }: { data: BarDatum[]; dark?: boolean }) 
           <g key={d.label}>
             <rect x={x} y={y} width={barW} height={barH} fill={d.color} rx="2" />
             <text x={x + barW / 2} y={mt + cH + 15} textAnchor="middle"
-              fontSize="11" fill={xLabelColor}>{d.label}</text>
+              fontSize="11" fontWeight="600" fill={xLabelColor}>{d.label}</text>
             <text x={x + barW / 2} y={y - 6} textAnchor="middle"
               fontSize="10" fontWeight="600" fill={valueLabelColor}>{d.value}</text>
           </g>
@@ -113,16 +113,16 @@ function LineChart() {
         return (
           <g key={pct}>
             <line x1={ml} y1={y} x2={W - mr} y2={y}
-              stroke="#E5E5E5" strokeWidth="1" strokeDasharray="4,4" />
-            <text x={ml - 6} y={y + 4} textAnchor="end" fontSize="10"
-              fill="#111">{pct}</text>
+              stroke="rgba(8,44,72,0.15)" strokeWidth="0.5" strokeDasharray="4,4" />
+            <text x={ml - 6} y={y + 4} textAnchor="end" fontSize="10" fontWeight="600"
+              fill="#082C48">{pct}</text>
           </g>
         )
       })}
-      <line x1={ml} y1={mt + cH} x2={W - mr} y2={mt + cH} stroke="#E5E5E5" strokeWidth="1" />
+      <line x1={ml} y1={mt + cH} x2={W - mr} y2={mt + cH} stroke="rgba(8,44,72,0.15)" strokeWidth="0.5" />
       {MONTHS.map((m, i) => (
-        <text key={m} x={xs(i)} y={mt + cH + 16} textAnchor="middle" fontSize="11"
-          fill="#111">{m}</text>
+        <text key={m} x={xs(i)} y={mt + cH + 16} textAnchor="middle" fontSize="11" fontWeight="600"
+          fill="#082C48">{m}</text>
       ))}
       {LINE_DATA.map(series => {
         const pts = series.values.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ')
@@ -139,7 +139,7 @@ function LineChart() {
       {LINE_DATA.map((s, i) => (
         <g key={s.label} transform={`translate(${ml + i * 110}, ${H - 12})`}>
           <rect x="0" y="-5" width="16" height="3" rx="1.5" fill={s.color} />
-          <text x="22" y="0" fontSize="11" fill="#111">{s.label}</text>
+          <text x="22" y="0" fontSize="11" fontWeight="600" fill="#082C48">{s.label}</text>
         </g>
       ))}
     </svg>
@@ -150,16 +150,16 @@ function LineChart() {
 const DONUT_DATA_LIGHT = [
   { label: 'Product',  pct: 0.35, color: t['dark-blue'] },
   { label: 'Services', pct: 0.22, color: t['primary-orange'] },
-  { label: 'Support',  pct: 0.18, color: t['mid-blue'] },
+  { label: 'Support',  pct: 0.18, color: '#458FCE' },
   { label: 'Growth',   pct: 0.13, color: '#9D9152' },
-  { label: 'Other',    pct: 0.12, color: '#554622' },
+  { label: 'Other',    pct: 0.12, color: '#FFC099' },
 ]
 
 const DONUT_DATA_DARK = [
   { label: 'Product',  pct: 0.35, color: t['pale-blue'] },
   { label: 'Services', pct: 0.22, color: t['primary-orange'] },
-  { label: 'Support',  pct: 0.18, color: t['tan'] },
-  { label: 'Growth',   pct: 0.13, color: '#FFC099' },
+  { label: 'Support',  pct: 0.18, color: '#458FCE' },
+  { label: 'Growth',   pct: 0.13, color: '#9D9152' },
   { label: 'Other',    pct: 0.12, color: t['white'] },
 ]
 
@@ -173,10 +173,10 @@ function DonutChart({ data, dark = false }: { data: DonutDatum[]; dark?: boolean
     return { ...d, path: donutSegment(cx, cy, r, ir, start, d.pct) }
   })
 
-  const centerLabelColor = dark ? 'rgba(255,255,255,0.6)' : '#111'
-  const centerValueColor = dark ? '#FFFFFF' : '#111'
-  const legendTextColor  = dark ? 'rgba(255,255,255,0.9)' : '#111'
-  const legendPctColor   = dark ? 'rgba(255,255,255,0.55)' : '#111'
+  const centerLabelColor = dark ? 'rgba(255,255,255,0.6)' : '#082C48'
+  const centerValueColor = dark ? '#FFFFFF' : '#082C48'
+  const legendTextColor  = dark ? 'rgba(255,255,255,0.9)' : '#082C48'
+  const legendPctColor   = dark ? 'rgba(255,255,255,0.55)' : '#082C48'
 
   return (
     <div className="donut-chart-row">
@@ -246,14 +246,15 @@ export default function DataVizCharts() {
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600,
               letterSpacing: "0.08em", textTransform: "uppercase", color: "#111",
               marginBottom: 8 }}>On light</div>
-            <div style={{ border: "1px solid #E5E5E5", padding: "24px 20px", background: "#fff" }}>
+            <div style={{ border: "1px solid #E5E5E5", padding: "24px 20px", background: '#FCFCF4' }}>
               <BarChart data={BAR_DATA_LIGHT} />
             </div>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
               marginTop: 8, lineHeight: 1.5 }}>
-              Q4 uses Tan 3 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
-                padding: "1px 5px", borderRadius: 2 }}>#9D9152</span> (3.2:1); Q5 uses Tan 4 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
-                padding: "1px 5px", borderRadius: 2 }}>#554622</span> (9.1:1)
+              Q3: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#458FCE</span>; Q4: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#9D9152</span>; Q5: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#441109</span>
             </div>
           </div>
           <div>
@@ -266,8 +267,9 @@ export default function DataVizCharts() {
             </div>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
               marginTop: 8, lineHeight: 1.5 }}>
-              Q4 swaps to Orange 2 <span style={{ fontFamily: "monospace", background: "#F3F3F3",
-                padding: "1px 5px", borderRadius: 2 }}>#FFC099</span> to separate it from Q1 Pale Blue
+              Q3: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#458FCE</span>; Q4: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
+                padding: "1px 5px", borderRadius: 2 }}>#9D9152</span>
             </div>
           </div>
         </div>
@@ -299,7 +301,7 @@ export default function DataVizCharts() {
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, fontWeight: 600,
               letterSpacing: "0.08em", textTransform: "uppercase", color: "#111",
               marginBottom: 8 }}>On light</div>
-            <div style={{ border: "1px solid #E5E5E5", padding: "32px 24px", background: "#fff" }}>
+            <div style={{ border: "1px solid #E5E5E5", padding: "32px 24px", background: '#FCFCF4' }}>
               <DonutChart data={DONUT_DATA_LIGHT} />
             </div>
           </div>
@@ -315,7 +317,7 @@ export default function DataVizCharts() {
         </div>
         <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "#111",
           marginTop: 8, lineHeight: 1.5 }}>
-          Dark variant: Growth swaps to Orange 2 (#FFC099) to distinguish it from Pale Blue; fifth slot uses White for maximum contrast
+          Support: #458FCE on both. Growth: #9D9152 on both. Other: #FFC099 on light, White on dark.
         </div>
       </div>
 
@@ -324,16 +326,16 @@ export default function DataVizCharts() {
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 4px', color: '#111' }}>Chart style specifications</h3>
         <div style={{ marginTop: 4, borderTop: "1px solid #E5E5E5" }}>
-          <SpecRow label="Gridlines" spec="1px #E5E5E5, horizontal only, dashed on line charts, solid on bar charts" />
-          <SpecRow label="Axis labels" spec="Inter 10–11px / #4D4D4D on light, 75% white on dark, always outside the plot area" />
-          <SpecRow label="Value labels" spec="Inter 10px / #111 on light, 90% white on dark, optional, above bars or at line endpoints" />
-          <SpecRow label="Legend" spec="Inter 11–12px / #333, below chart, horizontal, 16×3px rounded color block" />
-          <SpecRow label="Bar corners" spec="border-radius: 2px, max 4px" />
-          <SpecRow label="Background" spec="Always white (#FFFFFF) or brand dark. Ensures print-safe export." />
-          <SpecRow label="Chart title" spec="Saans 14px / 600 / #111, above chart, left-aligned" />
-          <SpecRow label="Chart subtitle" spec="Inter 12px / #4D4D4D, immediately below title, left-aligned" />
-          <SpecRow label="Dot size (line)" spec="radius 4–5px, filled with the series color" />
-          <SpecRow label="Stroke weight" spec="2–2.5px for lines, 1px for axis and grid lines" />
+          <SpecRow label="Gridlines" spec="0.5px, horizontal only. rgba(8,44,72,0.15) on light, rgba(255,255,255,0.12) on dark. Dashed on line charts, solid on bar charts." />
+          <SpecRow label="Background" spec="#FCFCF4 on light, Dark Blue (#082C48) on dark." />
+          <SpecRow label="Axis labels" spec="Inter 10–11px / semibold (600) / #082C48 on light, 75% white on dark. Always outside the plot area." />
+          <SpecRow label="Value labels" spec="Inter 10px / semibold (600) / #082C48 on light, 90% white on dark. Optional, above bars." />
+          <SpecRow label="Legend" spec="Inter 11px / semibold (600) / #082C48. Below chart, horizontal. 16×3px rounded color swatch." />
+          <SpecRow label="Bar corners" spec="border-radius: 2px" />
+          <SpecRow label="Chart title" spec="Saans 15px / semibold (600) / #111, above chart, left-aligned." />
+          <SpecRow label="Chart subtitle" spec="Inter 11px / uppercase / #111, immediately right of title, left-aligned." />
+          <SpecRow label="Dot size (line)" spec="radius 4.5px, filled with the series color." />
+          <SpecRow label="Stroke weight" spec="2.5px for line series. 0.5px for axis and grid lines." />
         </div>
       </div>
     </div>

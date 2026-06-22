@@ -5,7 +5,7 @@ const bf = brand.typography.bodyFont
 
 export default function TypeOverview() {
   return (
-    <div className="fg-overview" style={{ background: darkestPrimary.hex, color: lightestPrimary.hex }}>
+    <div className="fg-overview" style={{ background: darkestPrimary.hex, color: 'var(--fg-overview-text)' }}>
       {/* Left col */}
       <div style={{ fontFamily: `${bf}, sans-serif`, fontSize: 14, lineHeight: 1.55, color: 'var(--fg-overview-text)', alignSelf: 'start' }}>
         <p style={{ margin: '0 0 14px' }}>{df} is a low-contrast geometric sans-serif built for on-screen readability. Its clean, neutral structure gives {brand.meta.client} headlines presence without shouting: modern, technical, and approachable.</p>

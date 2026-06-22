@@ -52,6 +52,13 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onPr
     if (parent) setExpandedItems(prev => { const n = new Set(prev); n.add(parent); return n })
   }, [currentPage])
 
+  useEffect(() => {
+    if (isOpen && window.innerWidth <= 768) {
+      const active = findActiveGroup(currentPage)
+      setCollapsed(new Set(brand.nav.map(g => g.group).filter(g => g !== active)))
+    }
+  }, [isOpen])
+
   const toggle = (g: string) => setCollapsed(prev => {
     const n = new Set(prev)
     n.has(g) ? n.delete(g) : n.add(g)

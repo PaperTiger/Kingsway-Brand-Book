@@ -203,15 +203,6 @@ const brand: BrandConfig = {
       ],
     },
     {
-      group: 'Photography',
-      items: [
-        { label: 'Introduction', id: 'photo-intro'    },
-        { label: 'Examples',     id: 'photo-examples' },
-        { label: 'Dos',          id: 'photo-dos'      },
-        { label: "Don'ts",       id: 'photo-donts'    },
-      ],
-    },
-    {
       group: 'Data visualisation',
       items: [
         { label: 'Color sequence',   id: 'dataviz-colors' },
@@ -224,10 +215,6 @@ const brand: BrandConfig = {
         { label: 'Introduction', id: 'app-intro'    },
         { label: 'Examples',     id: 'app-examples' },
       ],
-    },
-    {
-      group: 'Iconography',
-      items: [{ label: 'Introduction', id: 'icon-intro' }],
     },
     {
       group: 'Print & export',

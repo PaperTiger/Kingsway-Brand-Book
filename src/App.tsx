@@ -73,7 +73,7 @@ function useBrandTokens() {
     const primarySorted = [...brand.colors.primary].sort((a, b) => hexLuminance(a.hex) - hexLuminance(b.hex))
     const darkest  = primarySorted[0]
     const lightest = primarySorted[primarySorted.length - 1]
-    const overviewDecls = `--fg-overview-bg: ${darkest.hex}; --fg-overview-text: ${lightest.hex}`
+    const overviewDecls = `--fg-overview-bg: ${darkest.hex}; --fg-overview-text: ${brand.tokens['pale-blue']}`
 
     // RGB triplets for tokens used in rgba() in index.css
     const rgbDecls = Object.entries(brand.tokens).map(([k, v]) => {
@@ -241,11 +241,6 @@ export default function App() {
     setPrintMode(false)
     document.body.classList.remove('print-active')
   }
-
-  // Pass active section to Marker so every report includes the page context
-  useEffect(() => {
-    ;(window as any).Marker?.setCustomData({ section: currentPage })
-  }, [currentPage])
 
   // Bridge for sections that have their own print buttons
   useEffect(() => {
