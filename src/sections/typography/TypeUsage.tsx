@@ -34,7 +34,7 @@ const rows = [
     face: 'Saans', weight: 'SemiBold',
     specs: '10 – 12 px · +8% tracking · 100% leading · UPPERCASE',
     ex: (
-      <div style={{ fontFamily: 'Saans, sans-serif', fontWeight: 600, fontSize: 13, lineHeight: 1, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#111' }}>
+      <div style={{ fontFamily: 'Saans, sans-serif', fontWeight: 600, fontSize: 11, lineHeight: 1, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#111' }}>
         Section label / eyebrow text
       </div>
     ),
