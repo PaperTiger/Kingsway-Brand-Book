@@ -5,7 +5,7 @@ const bf = brand.typography.bodyFont
 
 export default function TypeAvoid() {
   const avoidItems = [
-    { label: `Don't set headlines in ${bf}. Use ${df} only.`,         style: { fontFamily: `${bf}, sans-serif`, fontWeight: 700, fontSize: 28 } },
+    { label: "Don't set headlines in all caps.",                        style: { fontFamily: `${df}, sans-serif`, fontWeight: 700, fontSize: 28, textTransform: 'uppercase' as const } },
     { label: "Don't use ultra-tight letter-spacing on body text.",     style: { fontFamily: `${bf}, sans-serif`, fontSize: 16, letterSpacing: '-0.1em' } },
     { label: "Don't use very loose tracking on display text.",         style: { fontFamily: `${df}, sans-serif`, fontWeight: 300, fontSize: 28, letterSpacing: '0.2em' } },
     { label: "Don't set body copy in all caps.",                       style: { fontFamily: `${bf}, sans-serif`, fontSize: 16, textTransform: 'uppercase' as const } },
