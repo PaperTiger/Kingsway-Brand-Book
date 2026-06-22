@@ -10,7 +10,7 @@
 
 /* ── Reset ─────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: "ss01" 1; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -136,7 +136,7 @@ body.print-active .print-book-page { overflow: hidden; }
 .section-intro {
   font-family: 'Saans', sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #111;
   max-width: 600px;
   margin-bottom: 48px;
@@ -486,7 +486,7 @@ body.print-active .print-book-page { overflow: hidden; }
 .intro-body p {
   font-family: 'Saans', sans-serif;
   color: #111;
-  line-height: 1.6;
+  line-height: 1.4;
   font-size: 16px;
   margin-bottom: 14px;
 }
@@ -667,7 +667,7 @@ body.print-active .print-book-page { overflow: hidden; }
     display: block;
     font-family: Saans, sans-serif;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.4;
     color: #111;
     padding: 80px 60px;
   }

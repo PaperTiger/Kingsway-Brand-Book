@@ -12,7 +12,7 @@ export default function PhotoDonts() {
       <div>
         <div className="section-label" style={{ marginBottom: 20 }}>Photography</div>
         <h2 className="section-title" style={{ marginBottom: 24 }}>Don'ts</h2>
-        <p style={{ fontFamily: "Saans, sans-serif", fontSize: 14, color: "#111", lineHeight: 1.6 }}>
+        <p style={{ fontFamily: "Saans, sans-serif", fontSize: 14, color: "#111", lineHeight: 1.4 }}>
           Avoid photography choices that undermine authenticity, flatten the brand character,
           or project an image that does not reflect the real Kingsway.
         </p>

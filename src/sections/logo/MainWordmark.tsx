@@ -37,7 +37,7 @@ export default function MainWordmark() {
         {/* Clearspace */}
         <div className="content-block">
           <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 12px', color: '#111' }}>Clearspace</h3>
-          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.4, marginBottom: 24, maxWidth: 520 }}>
             Maintain a minimum clearspace of <strong>x</strong> on all sides, where x equals half the cap height of the wordmark.
           </p>
           <ClearspaceDiagram

@@ -98,7 +98,7 @@ export default function DataVizColors() {
               <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
                 color: t['dark-blue'], marginBottom: 8 }}>{r.heading}</div>
               <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
-                lineHeight: 1.6 }}>{r.body}</div>
+                lineHeight: 1.4 }}>{r.body}</div>
             </div>
           ))}
         </div>
@@ -109,7 +109,7 @@ export default function DataVizColors() {
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Sequential palette</h3>
         <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
-          lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          lineHeight: 1.4, marginBottom: 24, maxWidth: 520 }}>
           When a single data series needs value differentiation (heat maps, ranked lists, or
           choropleth maps), use opacity steps of the primary color.
         </p>

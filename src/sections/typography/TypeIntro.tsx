@@ -30,6 +30,14 @@ export default function TypeIntro() {
         chosen for on-screen legibility, brand consistency, and technical availability
         across all platforms.
       </p>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginTop: 32, padding: '16px 20px', background: '#F4F6F8', borderLeft: '3px solid #082C48', maxWidth: 560 }}>
+        <span style={{ fontFamily: `${bf}, sans-serif`, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#082C48', whiteSpace: 'nowrap', paddingTop: 1 }}>SS01</span>
+        <p style={{ fontFamily: `${bf}, sans-serif`, fontSize: 13, lineHeight: 1.5, color: '#333', margin: 0 }}>
+          Saans uses stylistic set SS01 for the single-story alternate 'a'. Always enable{' '}
+          <code style={{ fontFamily: 'monospace', fontSize: 12, background: '#E5E9ED', padding: '1px 5px', borderRadius: 3 }}>font-feature-settings: "ss01" 1</code>{' '}
+          wherever Saans is implemented.
+        </p>
+      </div>
     </div>
   )
 }

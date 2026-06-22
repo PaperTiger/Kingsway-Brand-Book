@@ -83,9 +83,9 @@ const brand: BrandConfig = {
     { size: '32px', name: 'Headline L',  family: 'Saans', weight: 600, ls: '-0.01em',  lh: 1.1  },
     { size: '24px', name: 'Headline M',  family: 'Saans', weight: 600, ls: '-0.005em', lh: 1.2  },
     { size: '21px', name: 'Headline S',  family: 'Saans', weight: 600, ls: '0',        lh: 1.2  },
-    { size: '18px', name: 'Body XL',     family: 'Saans', weight: 400, ls: '0',        lh: 1.55 },
-    { size: '16px', name: 'Body L',      family: 'Saans', weight: 400, ls: '0',        lh: 1.6  },
-    { size: '14px', name: 'Body M',      family: 'Saans', weight: 400, ls: '0',        lh: 1.6  },
+    { size: '18px', name: 'Body XL',     family: 'Saans', weight: 400, ls: '0',        lh: 1.2  },
+    { size: '16px', name: 'Body L',      family: 'Saans', weight: 400, ls: '0',        lh: 1.4  },
+    { size: '14px', name: 'Body M',      family: 'Saans', weight: 400, ls: '0',        lh: 1.4  },
     { size: '12px', name: 'Caption',     family: 'Saans', weight: 400, ls: '0',        lh: 1.5  },
   ],
 

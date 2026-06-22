@@ -44,7 +44,7 @@ const rows = [
     face: bodyXLEntry.family, weight: 'Regular',
     specs: `18 px · ${bodyXLEntry.ls} tracking · 120% leading · Sentence case`,
     ex: (
-      <div style={{ fontFamily: `${bodyXLEntry.family}, sans-serif`, fontWeight: bodyXLEntry.weight, fontSize: 'clamp(15px,1.4vw,18px)', lineHeight: 1.4, letterSpacing: bodyXLEntry.ls, color: '#111', maxWidth: 560 }}>
+      <div style={{ fontFamily: `${bodyXLEntry.family}, sans-serif`, fontWeight: bodyXLEntry.weight, fontSize: 'clamp(15px,1.4vw,18px)', lineHeight: 1.2, letterSpacing: bodyXLEntry.ls, color: '#111', maxWidth: 560 }}>
         {brand.specimens.body18}
       </div>
     ),
@@ -71,6 +71,14 @@ export default function TypeUsage() {
         and body copy, each mapped to a specific typeface, weight, size range, tracking, and leading.
         Mixing roles or sizes outside this system undermines hierarchy.
       </p>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 32, padding: '16px 20px', background: '#F4F6F8', borderLeft: '3px solid #082C48', maxWidth: 640 }}>
+        <span style={{ fontFamily: 'Saans, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#082C48', whiteSpace: 'nowrap', paddingTop: 1 }}>SS01</span>
+        <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 13, lineHeight: 1.5, color: '#333', margin: 0 }}>
+          Saans uses stylistic set SS01 for the single-story alternate 'a'. Always enable{' '}
+          <code style={{ fontFamily: 'monospace', fontSize: 12, background: '#E5E9ED', padding: '1px 5px', borderRadius: 3 }}>font-feature-settings: "ss01" 1</code>{' '}
+          wherever Saans is implemented.
+        </p>
+      </div>
       <div style={{ display: 'flex', gap: 12, marginBottom: 48, flexWrap: 'wrap' }}>
         <a href={`${import.meta.env.BASE_URL}downloads/saans-fonts.zip`} download className="dl-btn" style={{ marginTop: 0, marginBottom: 0 }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

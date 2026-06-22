@@ -10,7 +10,7 @@ export default function AppIntro() {
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
-          <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 16, lineHeight: 1.6,
+          <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 16, lineHeight: 1.4,
             color: '#111', margin: 0 }}>
             The Kingsway brand is judged in its most everyday moments: a pitch deck slide,
             a reporting dashboard, a social ad, a conference booth. This section shows how the

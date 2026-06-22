@@ -98,7 +98,7 @@ export default function Cobranding() {
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Clearspace between logos</h3>
         <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
-          lineHeight: 1.6, marginBottom: 32, maxWidth: 520 }}>
+          lineHeight: 1.4, marginBottom: 32, maxWidth: 520 }}>
           Maintain a minimum clearspace of <strong>one brand mark height</strong> on each side of
           the divider between the two logos. A vertical rule may sit at the midpoint.
         </p>
@@ -141,7 +141,7 @@ export default function Cobranding() {
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
           margin: '0 0 8px', color: '#111' }}>Size hierarchy</h3>
         <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
-          lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+          lineHeight: 1.4, marginBottom: 24, maxWidth: 520 }}>
           The brand logo must be visually equal to or larger than the partner logo at all times.
           Never allow a partner logo to appear more prominent than the brand.
         </p>
