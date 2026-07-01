@@ -28,7 +28,12 @@ export default function LogoAvatar() {
 
       {/* Avatars */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 48, marginBottom: 56 }}>
-        <div className="section-label" style={{ marginBottom: 24 }}>Avatars: Mark Simple</div>
+        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
+          <div className="section-label" style={{ marginBottom: 0 }}>Avatars: Mark Simple</div>
+          <a href={`${import.meta.env.BASE_URL}downloads/kingsway-avatars.zip`} download className="dl-btn" style={{ marginTop: 0, marginBottom: 0 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download avatars (1000&times;1000 PNG)
+          </a>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24, maxWidth: 680 }}>
           {avatarBgs.map(a => (
             <div key={a.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
@@ -47,7 +52,12 @@ export default function LogoAvatar() {
 
       {/* Favicons */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 48, marginBottom: 80 }}>
-        <div className="section-label" style={{ marginBottom: 24 }}>Favicons: Mark Simple</div>
+        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
+          <div className="section-label" style={{ marginBottom: 0 }}>Favicons: Mark Simple</div>
+          <a href={`${import.meta.env.BASE_URL}downloads/kingsway-favicons.zip`} download className="dl-btn" style={{ marginTop: 0, marginBottom: 0 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download favicons (.ico + PNG)
+          </a>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, maxWidth: 760 }}>
           <div>
             <div style={{ fontSize: 11, color: "#111", letterSpacing: "0.04em", marginBottom: 16, fontFamily: "Saans, sans-serif" }}>On light</div>
