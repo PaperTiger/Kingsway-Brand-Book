@@ -14,9 +14,9 @@ export default function TypeIntro() {
         campaign headlines to small data labels.
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2, marginBottom: 48 }}>
-        <div style={{ background: '#111', padding: '40px 36px' }}>
+        <div style={{ background: 'var(--black)', padding: '40px 36px' }}>
           <div style={{ fontFamily: `${df}, sans-serif`, fontWeight: 300, fontSize: 'clamp(40px,6vw,72px)', letterSpacing: '-0.04em', color: '#fff', lineHeight: 0.9, marginBottom: 24 }}>Aa</div>
-          <div style={{ fontFamily: `${bf}, sans-serif`, fontSize: 11, color: 'var(--black)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>Display & Headlines</div>
+          <div style={{ fontFamily: `${bf}, sans-serif`, fontSize: 11, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>Display & Headlines</div>
           <div style={{ fontFamily: `${df}, sans-serif`, fontSize: 20, fontWeight: 600, color: '#fff' }}>{df}</div>
         </div>
         <div style={{ background: '#F8F8F8', padding: '40px 36px' }}>

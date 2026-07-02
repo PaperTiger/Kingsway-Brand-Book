@@ -15,10 +15,12 @@ function SealFallback() {
 export default function Cover() {
   const { nameLine1, nameLine2, title, version, date, preparedBy, coverSealImage } = brand.meta
   const [imgErr, setImgErr] = useState(false)
+  const [titleLine1, ...titleRest] = title.split(' ')
+  const titleLine2 = titleRest.join(' ')
   return (
     <div className="cover">
       <h1 className="cover-heading">
-        {title}
+        {titleLine1}{titleLine2 && <><br />{titleLine2}</>}
       </h1>
       <div className="cover-meta">
         <div style={{ fontWeight: 600 }}>{nameLine1}{nameLine2 && ' ' + nameLine2}</div>
