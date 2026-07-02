@@ -18,10 +18,10 @@ export default function Cover() {
   return (
     <div className="cover">
       <h1 className="cover-heading">
-        {nameLine1}{nameLine2 && <><br />{nameLine2}</>}
+        {title}
       </h1>
       <div className="cover-meta">
-        <div style={{ fontWeight: 600 }}>{title}</div>
+        <div style={{ fontWeight: 600 }}>{nameLine1}{nameLine2 && ' ' + nameLine2}</div>
         <div>{version}</div>
         <div>{date}</div>
         <div>Prepared by {preparedBy}</div>

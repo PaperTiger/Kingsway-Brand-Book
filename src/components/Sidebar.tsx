@@ -74,7 +74,7 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onPr
             <img
               src={brand.meta.sidebarLogoImage}
               alt={brand.meta.client}
-              style={{ height: 30, width: 'auto', display: 'block' }}
+              style={{ height: 22, width: 'auto', display: 'block' }}
               onError={() => { setLogoError(true) }}
             />
           )}

@@ -9,7 +9,7 @@ export default function TypeIntro() {
       <div className="section-label">Typography</div>
       <h2 className="section-title">Introduction</h2>
       <p className="section-intro">
-        {brand.meta.client} uses two typefaces: {df} for display and headlines,
+        {brand.meta.client} uses two typefaces: {df} for display and headlines,{' '}
         {bf} for body copy and UI text. Together they cover every scale from large
         campaign headlines to small data labels.
       </p>

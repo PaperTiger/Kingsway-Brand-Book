@@ -97,7 +97,7 @@ const brand: BrandConfig = {
     version:          'Version 1.0',
     date:             'July 2026',
     preparedBy:       'Paper Tiger',
-    sidebarLogoImage: `${import.meta.env.BASE_URL}images/logos/kingsway-logo-full-dark-blue.svg`,
+    sidebarLogoImage: `${import.meta.env.BASE_URL}images/logos/kingsway-wordmark-dark-blue.svg`,
     coverSealImage:   `${import.meta.env.BASE_URL}images/logos/kingsway-mark-white.svg`,
   },
 
