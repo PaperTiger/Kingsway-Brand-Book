@@ -150,7 +150,8 @@ export default function PrintSpecs() {
           <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "var(--black)",
             lineHeight: 1.4 }}>
             Navigate to the page you want first, then click Download PDF. The export captures
-            the full page content, not just what's visible in the viewport.
+            the full page content, not just what's visible in the viewport, and may take a
+            few seconds on longer pages.
           </div>
         </div>
       </div>
