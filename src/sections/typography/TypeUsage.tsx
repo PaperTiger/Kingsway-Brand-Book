@@ -14,7 +14,7 @@ const rows = [
     face: displayEntry.family, weight: 'Bold',
     specs: `48 – 96 px · ${displayEntry.ls} tracking · 90% leading · Sentence case`,
     ex: (
-      <div style={{ fontFamily: `${displayEntry.family}, sans-serif`, fontWeight: displayEntry.weight, fontSize: 'clamp(32px, 5vw, 72px)', lineHeight: 0.9, letterSpacing: displayEntry.ls, color: '#111' }}>
+      <div style={{ fontFamily: `${displayEntry.family}, sans-serif`, fontWeight: displayEntry.weight, fontSize: 'clamp(32px, 5vw, 72px)', lineHeight: 0.9, letterSpacing: displayEntry.ls, color: 'var(--black)' }}>
         Prominent headline<br/>to describe a message.
       </div>
     ),
@@ -24,7 +24,7 @@ const rows = [
     face: headlineEntry.family, weight: 'SemiBold',
     specs: `21 – 42 px · ${headlineEntry.ls} tracking · 100% leading · Sentence case`,
     ex: (
-      <div style={{ fontFamily: `${headlineEntry.family}, sans-serif`, fontWeight: headlineEntry.weight, fontSize: 'clamp(20px, 3.5vw, 40px)', lineHeight: 1, letterSpacing: headlineEntry.ls, color: '#111' }}>
+      <div style={{ fontFamily: `${headlineEntry.family}, sans-serif`, fontWeight: headlineEntry.weight, fontSize: 'clamp(20px, 3.5vw, 40px)', lineHeight: 1, letterSpacing: headlineEntry.ls, color: 'var(--black)' }}>
         Concise subtitle to offer<br/>additional insight.
       </div>
     ),
@@ -34,7 +34,7 @@ const rows = [
     face: 'Saans', weight: 'SemiBold',
     specs: '10 – 12 px · +8% tracking · 100% leading · UPPERCASE',
     ex: (
-      <div style={{ fontFamily: 'Saans, sans-serif', fontWeight: 600, fontSize: 11, lineHeight: 1, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#111' }}>
+      <div style={{ fontFamily: 'Saans, sans-serif', fontWeight: 600, fontSize: 11, lineHeight: 1, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: 'var(--black)' }}>
         Section label / eyebrow text
       </div>
     ),
@@ -44,7 +44,7 @@ const rows = [
     face: bodyXLEntry.family, weight: 'Regular',
     specs: `18 px · ${bodyXLEntry.ls} tracking · 120% leading · Sentence case`,
     ex: (
-      <div style={{ fontFamily: `${bodyXLEntry.family}, sans-serif`, fontWeight: bodyXLEntry.weight, fontSize: 'clamp(15px,1.4vw,18px)', lineHeight: 1.2, letterSpacing: bodyXLEntry.ls, color: '#111', maxWidth: 560 }}>
+      <div style={{ fontFamily: `${bodyXLEntry.family}, sans-serif`, fontWeight: bodyXLEntry.weight, fontSize: 'clamp(15px,1.4vw,18px)', lineHeight: 1.2, letterSpacing: bodyXLEntry.ls, color: 'var(--black)', maxWidth: 560 }}>
         {brand.specimens.body18}
       </div>
     ),
@@ -54,7 +54,7 @@ const rows = [
     face: bodyLEntry.family, weight: 'Regular',
     specs: `16 px · ${bodyLEntry.ls} tracking · 140% leading · Sentence case`,
     ex: (
-      <div style={{ fontFamily: `${bodyLEntry.family}, sans-serif`, fontWeight: bodyLEntry.weight, fontSize: 'clamp(14px,1.2vw,16px)', lineHeight: 1.4, letterSpacing: bodyLEntry.ls, color: '#111', maxWidth: 560 }}>
+      <div style={{ fontFamily: `${bodyLEntry.family}, sans-serif`, fontWeight: bodyLEntry.weight, fontSize: 'clamp(14px,1.2vw,16px)', lineHeight: 1.4, letterSpacing: bodyLEntry.ls, color: 'var(--black)', maxWidth: 560 }}>
         {brand.specimens.body16}
       </div>
     ),
@@ -73,7 +73,7 @@ export default function TypeUsage() {
       </p>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 32, padding: '16px 20px', background: '#F4F6F8', borderLeft: '3px solid #082C48', maxWidth: 640 }}>
         <span style={{ fontFamily: 'Saans, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#082C48', whiteSpace: 'nowrap', paddingTop: 1 }}>SS01</span>
-        <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 13, lineHeight: 1.5, color: '#333', margin: 0 }}>
+        <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 13, lineHeight: 1.5, color: 'var(--black)', margin: 0 }}>
           Saans uses stylistic set SS01 for the single-story alternate 'a'. Always enable{' '}
           <code style={{ fontFamily: 'monospace', fontSize: 12, background: '#E5E9ED', padding: '1px 5px', borderRadius: 3 }}>font-feature-settings: "ss01" 1</code>{' '}
           wherever Saans is implemented.
@@ -89,10 +89,10 @@ export default function TypeUsage() {
       {rows.map((row) => (
         <div key={row.role} style={{ borderTop: '1px solid #E5E5E5', paddingTop: 28, paddingBottom: 48 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16, flexWrap: 'wrap', marginBottom: 24 }}>
-            <div style={{ fontFamily: 'Saans, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#111' }}>
+            <div style={{ fontFamily: 'Saans, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: 'var(--black)' }}>
               {row.role}
             </div>
-            <div style={{ fontFamily: 'Saans, sans-serif', fontSize: 12, color: '#111', letterSpacing: '0.01em' }}>
+            <div style={{ fontFamily: 'Saans, sans-serif', fontSize: 12, color: 'var(--black)', letterSpacing: '0.01em' }}>
               {row.face} · {row.weight} · {row.specs}
             </div>
           </div>

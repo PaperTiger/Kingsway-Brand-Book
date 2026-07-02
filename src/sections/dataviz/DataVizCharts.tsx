@@ -212,11 +212,11 @@ function SpecRow({ label, spec }: { label: string; spec: string }) {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "180px 1fr",
       borderBottom: "1px solid #E5E5E5", padding: "13px 0" }}>
-      <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+      <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
         fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", paddingTop: 1 }}>
         {label}
       </div>
-      <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#333",
+      <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "var(--black)",
         lineHeight: 1.5 }}>{spec}</div>
     </div>
   )
@@ -237,19 +237,19 @@ export default function DataVizCharts() {
       <div style={{ marginBottom: 48 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 16 }}>
           <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
-            color: "#111" }}>Bar chart</div>
-          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+            color: "var(--black)" }}>Bar chart</div>
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
             letterSpacing: "0.07em", textTransform: "uppercase" }}>Multi-category</div>
         </div>
         <div className="chart-compare-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
           <div>
             <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase", color: "#111",
+              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--black)",
               marginBottom: 8 }}>On light</div>
             <div style={{ border: "1px solid #E5E5E5", padding: "24px 20px", background: '#FCFCF4' }}>
               <BarChart data={BAR_DATA_LIGHT} />
             </div>
-            <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+            <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
               marginTop: 8, lineHeight: 1.5 }}>
               Q3: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
                 padding: "1px 5px", borderRadius: 2 }}>#458FCE</span>; Q4: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
@@ -259,13 +259,13 @@ export default function DataVizCharts() {
           </div>
           <div>
             <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase", color: "#111",
+              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--black)",
               marginBottom: 8 }}>On dark</div>
             <div style={{ border: "1px solid #E5E5E5", padding: "24px 20px",
               background: t['dark-blue'] }}>
               <BarChart data={BAR_DATA_DARK} dark />
             </div>
-            <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+            <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
               marginTop: 8, lineHeight: 1.5 }}>
               Q3: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
                 padding: "1px 5px", borderRadius: 2 }}>#458FCE</span>; Q4: <span style={{ fontFamily: "monospace", background: "#F3F3F3",
@@ -279,8 +279,8 @@ export default function DataVizCharts() {
       <div style={{ marginBottom: 48 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 16 }}>
           <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
-            color: "#111" }}>Line chart</div>
-          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+            color: "var(--black)" }}>Line chart</div>
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
             letterSpacing: "0.07em", textTransform: "uppercase" }}>Time series</div>
         </div>
         <div className="line-chart-box" style={{ border: "1px solid #E5E5E5", padding: "32px 24px" }}>
@@ -292,14 +292,14 @@ export default function DataVizCharts() {
       <div style={{ marginBottom: 56 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 16 }}>
           <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
-            color: "#111" }}>Donut chart</div>
-          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+            color: "var(--black)" }}>Donut chart</div>
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
             letterSpacing: "0.07em", textTransform: "uppercase" }}>Part-to-whole</div>
         </div>
         <div className="chart-compare-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
           <div>
             <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase", color: "#111",
+              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--black)",
               marginBottom: 8 }}>On light</div>
             <div style={{ border: "1px solid #E5E5E5", padding: "32px 24px", background: '#FCFCF4' }}>
               <DonutChart data={DONUT_DATA_LIGHT} />
@@ -307,7 +307,7 @@ export default function DataVizCharts() {
           </div>
           <div>
             <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 10, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase", color: "#111",
+              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--black)",
               marginBottom: 8 }}>On dark</div>
             <div style={{ border: "1px solid #E5E5E5", padding: "32px 24px",
               background: t['dark-blue'] }}>
@@ -315,7 +315,7 @@ export default function DataVizCharts() {
             </div>
           </div>
         </div>
-        <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "#111",
+        <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, color: "var(--black)",
           marginTop: 8, lineHeight: 1.5 }}>
           Support: #458FCE on both. Growth: #9D9152 on both. Other: #FFC099 on light, White on dark.
         </div>
@@ -324,7 +324,7 @@ export default function DataVizCharts() {
       {/* Style spec */}
       <div className="content-block">
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
-          margin: '0 0 4px', color: '#111' }}>Chart style specifications</h3>
+          margin: '0 0 4px', color: 'var(--black)' }}>Chart style specifications</h3>
         <div style={{ marginTop: 4, borderTop: "1px solid #E5E5E5" }}>
           <SpecRow label="Gridlines" spec="0.5px, horizontal only. rgba(8,44,72,0.15) on light, rgba(255,255,255,0.12) on dark. Dashed on line charts, solid on bar charts." />
           <SpecRow label="Background" spec="#FCFCF4 on light, Dark Blue (#082C48) on dark." />

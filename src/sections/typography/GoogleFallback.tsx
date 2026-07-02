@@ -6,7 +6,7 @@ const rows = [
     face: 'Saans', weight: 'Bold',
     specs: '24–72 px · −1% tracking · 100% leading · Sentence case',
     ex: (
-      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 700, fontSize: "clamp(28px,4vw,56px)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "#111" }}>
+      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 700, fontSize: "clamp(28px,4vw,56px)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--black)" }}>
         Design that works<br/>as hard as the brand.
       </div>
     ),
@@ -16,7 +16,7 @@ const rows = [
     face: 'Saans', weight: 'SemiBold',
     specs: '18–28 px · −1% tracking · 100% leading · Sentence case',
     ex: (
-      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 600, fontSize: "clamp(18px,2.5vw,28px)", lineHeight: 1, letterSpacing: "-0.01em", color: "#111" }}>
+      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 600, fontSize: "clamp(18px,2.5vw,28px)", lineHeight: 1, letterSpacing: "-0.01em", color: "var(--black)" }}>
         Concise subtitle for additional context
       </div>
     ),
@@ -26,7 +26,7 @@ const rows = [
     face: 'Saans', weight: 'Medium',
     specs: '10–12 px · +8% tracking · 100% leading · UPPERCASE',
     ex: (
-      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 500, fontSize: 12, lineHeight: 1, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#111" }}>
+      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 500, fontSize: 12, lineHeight: 1, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "var(--black)" }}>
         Section label / eyebrow text
       </div>
     ),
@@ -36,7 +36,7 @@ const rows = [
     face: 'Saans', weight: 'Regular',
     specs: '18 px · 0% tracking · 140% leading · Sentence case',
     ex: (
-      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 400, fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.4, color: "#111", maxWidth: 560 }}>
+      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 400, fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.4, color: "var(--black)", maxWidth: 560 }}>
         {brand.specimens.body18}
       </div>
     ),
@@ -46,7 +46,7 @@ const rows = [
     face: 'Saans', weight: 'Regular',
     specs: '16 px · 0% tracking · 140% leading · Sentence case',
     ex: (
-      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 400, fontSize: "clamp(14px,1.2vw,16px)", lineHeight: 1.4, color: "#111", maxWidth: 560 }}>
+      <div style={{ fontFamily: "Saans, sans-serif", fontWeight: 400, fontSize: "clamp(14px,1.2vw,16px)", lineHeight: 1.4, color: "var(--black)", maxWidth: 560 }}>
         {brand.specimens.fallbackGoogle16}
       </div>
     ),
@@ -63,10 +63,10 @@ export default function GoogleFallback() {
         the recommended fallback. It shares Saans's geometric, low-contrast structure. It is not a
         replacement for locally hosted Saans in branded communications.
       </p>
-      <div style={{ background: "#F5F5F5", padding: "14px 18px", fontFamily: "monospace", fontSize: 12, color: "#111", marginBottom: 12 }}>
+      <div style={{ background: "#F5F5F5", padding: "14px 18px", fontFamily: "monospace", fontSize: 12, color: "var(--black)", marginBottom: 12 }}>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
       </div>
-      <div style={{ background: "#F5F5F5", padding: "14px 18px", fontFamily: "monospace", fontSize: 12, color: "#111", marginBottom: 32 }}>
+      <div style={{ background: "#F5F5F5", padding: "14px 18px", fontFamily: "monospace", fontSize: 12, color: "var(--black)", marginBottom: 32 }}>
         font-family: 'Saans', 'Outfit', Arial, sans-serif;
       </div>
       <a href="https://fonts.google.com/specimen/Outfit" target="_blank" rel="noopener" className="dl-btn" style={{ marginTop: 0, marginBottom: 48 }}>
@@ -77,10 +77,10 @@ export default function GoogleFallback() {
       {rows.map(row => (
         <div key={row.role} style={{ borderTop: "1px solid #E5E5E5", paddingTop: 28, paddingBottom: 48 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, flexWrap: "wrap", marginBottom: 24 }}>
-            <div style={{ fontFamily: "Saans, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#111" }}>
+            <div style={{ fontFamily: "Saans, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "var(--black)" }}>
               {row.role}
             </div>
-            <div style={{ fontFamily: "Saans, sans-serif", fontSize: 12, color: "#4D4D4D", letterSpacing: "0.01em" }}>
+            <div style={{ fontFamily: "Saans, sans-serif", fontSize: 12, color: "var(--black)", letterSpacing: "0.01em" }}>
               {row.face} · {row.weight} · {row.specs}
             </div>
           </div>

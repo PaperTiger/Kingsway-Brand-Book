@@ -36,8 +36,8 @@ export default function MainWordmark() {
 
         {/* Clearspace */}
         <div className="content-block">
-          <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 12px', color: '#111' }}>Clearspace</h3>
-          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#555', lineHeight: 1.4, marginBottom: 24, maxWidth: 520 }}>
+          <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 12px', color: 'var(--black)' }}>Clearspace</h3>
+          <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: 'var(--black)', lineHeight: 1.4, marginBottom: 24, maxWidth: 520 }}>
             Maintain a minimum clearspace of <strong>x</strong> on all sides, where x equals half the cap height of the wordmark.
           </p>
           <ClearspaceDiagram
@@ -50,7 +50,7 @@ export default function MainWordmark() {
 
         {/* Approved color combinations */}
         <div style={{ marginTop: 48 }}>
-          <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 16px', color: '#111' }}>Approved color combinations</h3>
+          <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17, margin: '0 0 16px', color: 'var(--black)' }}>Approved color combinations</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 0 }}>
             {combos.map(c => (
               <div key={c.label} style={{ background: c.bg, padding: '28px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, aspectRatio: '4/3', justifyContent: 'center', ...(c.bg === t['white'] ? { boxShadow: 'inset 0 0 0 1px #C8C8C8' } : {}) }}>

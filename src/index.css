@@ -66,7 +66,7 @@ body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; font-fe
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #111;
+  color: var(--black);
   padding: 16px 24px 6px;
 }
 
@@ -75,7 +75,7 @@ body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; font-fe
   font-family: 'Saans', sans-serif;
   font-size: 13px;
   font-weight: 400;
-  color: #111;
+  color: var(--black);
   padding: 6px 24px;
   text-decoration: none;
   cursor: pointer;
@@ -99,11 +99,6 @@ body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; font-fe
   padding-top: 56px;
   min-width: 0;
 }
-
-/* Print mode: full-width layout, sidebar hidden, each page contained */
-body.print-active .sidebar { display: none !important; }
-body.print-active .main { margin-left: 0 !important; padding-top: 0 !important; }
-body.print-active .print-book-page { overflow: hidden; }
 
 /* ── Section / page ────────────────────────────────────────────── */
 .page {
@@ -137,7 +132,7 @@ body.print-active .print-book-page { overflow: hidden; }
   font-family: 'Saans', sans-serif;
   font-size: 16px;
   line-height: 1.4;
-  color: #111;
+  color: var(--black);
   max-width: 600px;
   margin-bottom: 48px;
 }
@@ -307,7 +302,7 @@ body.print-active .print-book-page { overflow: hidden; }
   padding-top: 14px;
   font-size: 12px;
   font-family: 'Saans', sans-serif;
-  color: #333;
+  color: var(--black);
 }
 
 .cs-def-x {
@@ -344,7 +339,7 @@ body.print-active .print-book-page { overflow: hidden; }
 .specimen-meta {
   font-family: 'Saans', sans-serif;
   font-size: 10px;
-  color: #4D4D4D;
+  color: var(--black);
   width: 80px;
   flex-shrink: 0;
   text-transform: uppercase;
@@ -478,14 +473,14 @@ body.print-active .print-book-page { overflow: hidden; }
   font-size: clamp(24px, 3.2vw, 48px);
   line-height: 1.0;
   letter-spacing: -0.02em;
-  color: #111;
+  color: var(--black);
   max-width: 960px;
   margin: 0;
 }
 .intro-body { max-width: 520px; }
 .intro-body p {
   font-family: 'Saans', sans-serif;
-  color: #111;
+  color: var(--black);
   line-height: 1.4;
   font-size: 16px;
   margin-bottom: 14px;
@@ -513,7 +508,7 @@ body.print-active .print-book-page { overflow: hidden; }
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #111;
+  color: var(--black);
   border: 1px solid #111;
   font-family: 'Saans', sans-serif;
   font-size: 13px;
@@ -559,7 +554,7 @@ body.print-active .print-book-page { overflow: hidden; }
   padding: 14px 18px;
   font-family: 'Saans', sans-serif;
   font-size: 14px;
-  color: #111;
+  color: var(--black);
   line-height: 1.5;
   max-width: 520px;
 }
@@ -583,7 +578,7 @@ body.print-active .print-book-page { overflow: hidden; }
   gap: 6px;
   padding: 28px 0;
   max-width: 45%;
-  color: #111;
+  color: var(--black);
   transition: color 0.15s;
   text-align: left;
 }
@@ -596,7 +591,7 @@ body.print-active .print-book-page { overflow: hidden; }
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #4D4D4D;
+  color: var(--black);
   transition: color 0.15s;
 }
 
@@ -631,7 +626,7 @@ body.print-active .print-book-page { overflow: hidden; }
   font-family: 'Saans', sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #4D4D4D;
+  color: var(--black);
   letter-spacing: 0.01em;
   transition: border-color 0.1s, color 0.1s;
   text-align: left;
@@ -639,6 +634,14 @@ body.print-active .print-book-page { overflow: hidden; }
 .sidebar-print-btn:hover {
   border-color: var(--primary-orange, #F05102);
   color: var(--primary-orange, #F05102);
+}
+.sidebar-print-btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.sidebar-print-btn:disabled:hover {
+  border-color: #E5E5E5;
+  color: var(--black);
 }
 
 /* ── Print / PDF export ────────────────────────────────────────── */
@@ -659,30 +662,6 @@ body.print-active .print-book-page { overflow: hidden; }
 
   .main { margin-left: 0 !important; padding-top: 0 !important; min-height: auto !important; }
   .layout { display: block; min-height: auto !important; }
-
-  /* When NOT using the sidebar print button (native Cmd+P), show a guide message */
-  body:not(.print-active) .main { display: none !important; }
-  body:not(.print-active)::after {
-    content: "To export the complete brand book, use the 'Generate print version' button in the sidebar.";
-    display: block;
-    font-family: Saans, sans-serif;
-    font-size: 18px;
-    line-height: 1.4;
-    color: #111;
-    padding: 80px 60px;
-  }
-
-  /* Each section = exactly one landscape page */
-  .print-book-page {
-    height: 100vh;
-    overflow: hidden;
-    break-before: page;
-    page-break-before: always;
-  }
-  .print-book-page:first-child {
-    break-before: auto;
-    page-break-before: auto;
-  }
 
   /* Release fixed heights so content isn't clipped */
   .page { overflow: visible !important; }

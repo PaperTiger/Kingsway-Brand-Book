@@ -6,7 +6,8 @@ interface Props {
   onNavigate: (id: string) => void
   isOpen: boolean
   onClose: () => void
-  onPrint?: () => void
+  onDownloadPdf?: () => void
+  pdfGenerating?: boolean
 }
 
 function findActiveGroup(page: string): string | null {
@@ -34,7 +35,7 @@ function findParentItem(page: string) {
   return null
 }
 
-export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onPrint }: Props) {
+export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onDownloadPdf, pdfGenerating }: Props) {
   const [collapsed, setCollapsed] = useState<Set<string>>(() => initialCollapsed(currentPage))
   const [expandedItems, setExpandedItems] = useState<Set<string>>(() => {
     const parent = findParentItem(currentPage)
@@ -80,7 +81,7 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onPr
           )}
           {(!hasLogo || logoError) && (
             <div style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 15,
-              letterSpacing: '-0.02em', color: '#111', lineHeight: 1 }}>
+              letterSpacing: '-0.02em', color: 'var(--black)', lineHeight: 1 }}>
               {brand.meta.nameLine1}{brand.meta.nameLine2 ? ' ' + brand.meta.nameLine2 : ''}
             </div>
           )}
@@ -150,14 +151,28 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose, onPr
       </nav>
 
       <div className="sidebar-print-footer">
-        <button className="sidebar-print-btn" onClick={() => onPrint ? onPrint() : window.print()}>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"/>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-            <rect x="6" y="14" width="12" height="8"/>
-          </svg>
-          Generate print version
+        <button className="sidebar-print-btn" onClick={onDownloadPdf} disabled={pdfGenerating}>
+          {pdfGenerating ? (
+            <>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                style={{ animation: 'spin 1s linear infinite' }}>
+                <circle cx="12" cy="12" r="10" strokeOpacity="0.25"/>
+                <path d="M12 2a10 10 0 0 1 10 10" />
+              </svg>
+              Generating…
+            </>
+          ) : (
+            <>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download PDF
+            </>
+          )}
         </button>
       </div>
     </aside>

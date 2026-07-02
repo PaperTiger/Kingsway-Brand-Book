@@ -30,10 +30,10 @@ function SpecTable({ rows }: { rows: { spec: string; value: string }[] }) {
           borderBottom: i < rows.length - 1 ? "1px solid #E5E5E5" : undefined,
         }}>
           <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, fontWeight: 700,
-            color: "#111", textTransform: "uppercase", letterSpacing: "0.05em", paddingTop: 1 }}>
+            color: "var(--black)", textTransform: "uppercase", letterSpacing: "0.05em", paddingTop: 1 }}>
             {row.spec}
           </div>
-          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "var(--black)",
             lineHeight: 1.55 }}>{row.value}</div>
         </div>
       ))}
@@ -72,8 +72,8 @@ export default function PrintSpecs() {
       {/* Safe area diagram */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40, marginBottom: 56 }}>
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
-          margin: '0 0 8px', color: '#111' }}>Print safe area</h3>
-        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
+          margin: '0 0 8px', color: 'var(--black)' }}>Print safe area</h3>
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: 'var(--black)',
           lineHeight: 1.4, marginBottom: 28, maxWidth: 520 }}>
           For any printed document using the brand identity, always set up bleed and safe area
           zones in your layout application before placing artwork.
@@ -125,7 +125,7 @@ export default function PrintSpecs() {
                   <line x1="0" y1="5" x2="24" y2="5" stroke={item.color} strokeWidth="1.5"
                     strokeDasharray={item.dash ? "4,3" : undefined} />
                 </svg>
-                <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "#111",
+                <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "var(--black)",
                   lineHeight: 1.4 }}>{item.label}</div>
               </div>
             ))}
@@ -136,39 +136,21 @@ export default function PrintSpecs() {
       {/* PDF export */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: 40 }}>
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
-          margin: '0 0 8px', color: '#111' }}>Export this brand book as PDF</h3>
-        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
+          margin: '0 0 8px', color: 'var(--black)' }}>Export a page as PDF</h3>
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: 'var(--black)',
           lineHeight: 1.4, marginBottom: 24, maxWidth: 560 }}>
-          Use the button below (or the sidebar Print button) to export the complete brand book
-          as a PDF. All sections are included, each starting on a new page.
+          Use the <strong>Download PDF</strong> button at the bottom of the sidebar to export
+          the page currently on screen as its own PDF file, ready to share or archive.
         </p>
-        <button
-          onClick={() => (window as any).__brandBookPrint?.() ?? window.print()}
-          style={{
-            display: "inline-flex", alignItems: "center", gap: 9,
-            background: '#111', color: "#fff", border: "none", cursor: "pointer",
-            fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
-            letterSpacing: "0.06em", padding: "13px 22px", marginBottom: 28,
-          }}
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"/>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-            <rect x="6" y="14" width="12" height="8"/>
-          </svg>
-          Print full brand book
-        </button>
 
         <div style={{ background: "#EEF3F7", borderLeft: `3px solid ${t['dark-blue']}`,
           padding: "16px 20px", maxWidth: 560 }}>
           <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, fontWeight: 600,
-            color: t['dark-blue'], marginBottom: 6 }}>Browser tip</div>
-          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
+            color: t['dark-blue'], marginBottom: 6 }}>Tip</div>
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "var(--black)",
             lineHeight: 1.4 }}>
-            In the print dialog, set <strong>Destination → Save as PDF</strong>, margins to
-            <strong> None</strong>, and enable <strong>Background graphics</strong> to preserve
-            brand colors. Use A4 paper size for best results.
+            Navigate to the page you want first, then click Download PDF. The export captures
+            the full page content, not just what's visible in the viewport.
           </div>
         </div>
       </div>

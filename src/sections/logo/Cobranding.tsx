@@ -72,7 +72,7 @@ export default function Cobranding() {
             <PartnerLogo height={40} />
           </div>
           <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 11, fontWeight: 600,
-            letterSpacing: "0.08em", textTransform: "uppercase", color: "#111" }}>
+            letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--black)" }}>
             Horizontal, on light
           </div>
         </div>
@@ -96,8 +96,8 @@ export default function Cobranding() {
       {/* Clearspace between logos */}
       <div className="content-block">
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
-          margin: '0 0 8px', color: '#111' }}>Clearspace between logos</h3>
-        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
+          margin: '0 0 8px', color: 'var(--black)' }}>Clearspace between logos</h3>
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: 'var(--black)',
           lineHeight: 1.4, marginBottom: 32, maxWidth: 520 }}>
           Maintain a minimum clearspace of <strong>one brand mark height</strong> on each side of
           the divider between the two logos. A vertical rule may sit at the midpoint.
@@ -126,7 +126,7 @@ export default function Cobranding() {
             </div>
             <PartnerLogo height={44} />
           </div>
-          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "#111",
+          <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 12, color: "var(--black)",
             display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontFamily: "'Saans', sans-serif", fontWeight: 700, fontSize: 11,
               background: `color-mix(in srgb, ${t['dark-blue']} 40%, transparent)`,
@@ -139,8 +139,8 @@ export default function Cobranding() {
       {/* Size hierarchy */}
       <div className="content-block">
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
-          margin: '0 0 8px', color: '#111' }}>Size hierarchy</h3>
-        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: '#111',
+          margin: '0 0 8px', color: 'var(--black)' }}>Size hierarchy</h3>
+        <p style={{ fontFamily: "'Saans', sans-serif", fontSize: 14, color: 'var(--black)',
           lineHeight: 1.4, marginBottom: 24, maxWidth: 520 }}>
           The brand logo must be visually equal to or larger than the partner logo at all times.
           Never allow a partner logo to appear more prominent than the brand.
@@ -178,7 +178,7 @@ export default function Cobranding() {
       {/* What to avoid */}
       <div className="content-block">
         <h3 style={{ fontFamily: "'Saans', sans-serif", fontWeight: 500, fontSize: 17,
-          margin: '0 0 24px', color: '#111' }}>What to avoid</h3>
+          margin: '0 0 24px', color: 'var(--black)' }}>What to avoid</h3>
         <div className="cobranding-avoid-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)",
           gap: 0, border: "1px solid #E5E5E5" }}>
           {avoidItems.map((item, i) => (
@@ -192,7 +192,7 @@ export default function Cobranding() {
                 marginBottom: 8 }}>
                 {item.heading}
               </div>
-              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "#111",
+              <div style={{ fontFamily: "'Saans', sans-serif", fontSize: 13, color: "var(--black)",
                 lineHeight: 1.5 }}>
                 {item.body}
               </div>

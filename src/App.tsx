@@ -38,25 +38,6 @@ const SECTIONS: Record<string, React.LazyExoticComponent<() => React.ReactElemen
   'print-specs':        lazy(() => import('./sections/print/PrintSpecs')),
 }
 
-// All page IDs in document order (cover first, then nav order, deduped)
-function buildAllPageIds(): string[] {
-  const ids: string[] = ['home']
-  const seen = new Set<string>(['home'])
-  for (const group of brand.nav) {
-    for (const item of group.items) {
-      if (!seen.has(item.id)) { ids.push(item.id); seen.add(item.id) }
-      if (item.children) {
-        for (const child of item.children) {
-          if (!seen.has(child.id)) { ids.push(child.id); seen.add(child.id) }
-        }
-      }
-    }
-  }
-  return ids
-}
-
-const ALL_PAGE_IDS = buildAllPageIds()
-
 function hexLuminance(hex: string): number {
   const c = hex.replace('#', '')
   const r = parseInt(c.slice(0, 2), 16) / 255
@@ -96,7 +77,7 @@ function MobileHeader({ onOpen, onHome }: { onOpen: () => void; onHome: () => vo
     <header className="mobile-header">
       <button className="hamburger" onClick={onOpen} aria-label="Open menu">
         <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
-          <path d="M0 1h18M0 7h18M0 13h18" stroke="#111" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M0 1h18M0 7h18M0 13h18" stroke="var(--black)" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
       </button>
       <div onClick={onHome} style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
@@ -110,7 +91,7 @@ function MobileHeader({ onOpen, onHome }: { onOpen: () => void; onHome: () => vo
         )}
         {(!hasLogo || logoError) && (
           <span style={{ fontFamily: "'Saans', sans-serif", fontWeight: 600, fontSize: 14,
-            letterSpacing: '-0.02em', color: '#111' }}>
+            letterSpacing: '-0.02em', color: 'var(--black)' }}>
             {brand.meta.nameLine1}{brand.meta.nameLine2 ? ' ' + brand.meta.nameLine2 : ''}
           </span>
         )}
@@ -124,7 +105,6 @@ export default function App() {
 
   const [currentPage, setCurrentPage] = useState(() => window.location.hash.slice(1) || 'home')
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [printMode, setPrintMode] = useState(false)
   const [pdfGenerating, setPdfGenerating] = useState(false)
 
   const navigate = (id: string) => {
@@ -140,112 +120,94 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  const handlePrint = async () => {
-    // Pre-load all section modules so they render without Suspense delays
-    await Promise.all([
-      import('./sections/home/Cover'),
-      import('./sections/home/ViIntro'),
-      import('./sections/logo/MainWordmark'),
-      import('./sections/logo/FullLogo'),
-      import('./sections/logo/StackedLogo'),
-      import('./sections/logo/LogoMark'),
-      import('./sections/logo/LogoAvatar'),
-      import('./sections/logo/Cobranding'),
-      import('./sections/logo/LogoAvoid'),
-      import('./sections/color/ColorIntro'),
-      import('./sections/color/PrimaryPalette'),
-      import('./sections/color/SecondaryPalette'),
-      import('./sections/color/ColorCombinations'),
-      import('./sections/color/ColorPathways'),
-      import('./sections/typography/TypeIntro'),
-      import('./sections/typography/TypeOverview'),
-      import('./sections/typography/TypeUsage'),
-      import('./sections/typography/TypeSpecimen'),
-      import('./sections/typography/TypeScale'),
-      import('./sections/typography/GoogleFallback'),
-      import('./sections/typography/SystemFallback'),
-      import('./sections/typography/TypeAvoid'),
-      import('./sections/photography/PhotoIntro'),
-      import('./sections/photography/PhotoExamples'),
-      import('./sections/photography/PhotoDos'),
-      import('./sections/photography/PhotoDonts'),
-      import('./sections/dataviz/DataVizColors'),
-      import('./sections/dataviz/DataVizCharts'),
-      import('./sections/applications/AppIntro'),
-      import('./sections/applications/AppExamples'),
-      import('./sections/iconography/IconIntro'),
-      import('./sections/print/PrintSpecs'),
-    ])
-    // Wait for web fonts to finish loading before switching layout — prevents FOUT flash
-    await document.fonts.ready
-    setPrintMode(true)
-    document.body.classList.add('print-active')
-  }
-
+  // Captures the currently visible page (#pdf-capture-root) and downloads it as a PDF.
   const handleDownloadPdf = async () => {
-    const pages = Array.from(document.querySelectorAll('.print-book-page')) as HTMLElement[]
-    if (!pages.length) return
+    const captureRoot = document.getElementById('pdf-capture-root')
+    if (!captureRoot) return
     setPdfGenerating(true)
+
+    const sidebar  = document.querySelector('.sidebar') as HTMLElement | null
+    const mHeader  = document.querySelector('.mobile-header') as HTMLElement | null
+    const overlay  = document.querySelector('.sidebar-overlay') as HTMLElement | null
+    const pageNavs = document.querySelectorAll<HTMLElement>('.page-nav')
+    const main     = document.querySelector('.main') as HTMLElement | null
+
+    // display:none removes the sidebar from layout entirely — visibility:hidden would
+    // leave a blank strip since the element still occupies its box.
+    const prevSidebarDisplay = sidebar ? sidebar.style.display : ''
+    if (sidebar) sidebar.style.display = 'none'
+
+    const chrome = [mHeader, overlay].filter((el): el is HTMLElement => !!el)
+    chrome.forEach(el => { el.style.visibility = 'hidden' })
+
+    const prevPageNavDisplays = Array.from(pageNavs).map(el => el.style.display)
+    pageNavs.forEach(el => { el.style.display = 'none' })
+
+    const prevMargin = main ? main.style.marginLeft : ''
+    if (main) main.style.marginLeft = '0'
+
+    const origScrollY = window.scrollY
+    window.scrollTo(0, 0)
+
+    // Wait two frames for the layout/scroll changes above to fully settle before measuring.
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)))
+
     try {
       const [domtoimage, { default: jsPDF }] = await Promise.all([
         import('dom-to-image-more'),
         import('jspdf'),
       ])
-      const pageW = pages[0].offsetWidth
-      let pdf: InstanceType<typeof jsPDF> | null = null
-      for (let i = 0; i < pages.length; i++) {
-        const page = pages[i]
 
-        // Lift overflow + height constraints on the page and key inner containers
-        // so scrollHeight reflects the full content, not the visible box.
-        const toRestore: Array<{ el: HTMLElement; overflow: string; height: string }> = []
-        const unconstrain = (el: HTMLElement) => {
-          toRestore.push({ el, overflow: el.style.overflow, height: el.style.height })
-          el.style.overflow = 'visible'
-          el.style.height = 'auto'
-        }
-        unconstrain(page)
-        page.querySelectorAll<HTMLElement>('.page, .portrait-intro, .logo-hero, .fg-overview, .intro-layout').forEach(unconstrain)
-
-        const pageH = Math.max(page.scrollHeight, page.offsetHeight)
-        const dataUrl = await domtoimage.toJpeg(page, {
-          quality: 0.92,
-          width: pageW,
-          height: pageH,
-          bgcolor: '#ffffff',
-        })
-
-        for (const { el, overflow, height } of toRestore) {
-          el.style.overflow = overflow
-          el.style.height = height
-        }
-        if (!pdf) {
-          pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [pageW, pageH], compress: true })
-        } else {
-          pdf.addPage([pageW, pageH], 'landscape')
-        }
-        pdf.addImage(dataUrl, 'JPEG', 0, 0, pageW, pageH, `p${i}`, 'FAST')
+      // Lift overflow + height constraints so scrollHeight reflects the full content.
+      const toRestore: Array<{ el: HTMLElement; overflow: string; height: string }> = []
+      const unconstrain = (el: HTMLElement) => {
+        toRestore.push({ el, overflow: el.style.overflow, height: el.style.height })
+        el.style.overflow = 'visible'
+        el.style.height = 'auto'
       }
+      unconstrain(captureRoot)
+      captureRoot.querySelectorAll<HTMLElement>('.page, .portrait-intro, .logo-hero, .fg-overview, .intro-layout').forEach(unconstrain)
+
+      const captureW = captureRoot.offsetWidth
+      const captureH = Math.max(captureRoot.scrollHeight, captureRoot.offsetHeight)
+
+      const dataUrl = await domtoimage.toJpeg(captureRoot, {
+        quality: 0.92,
+        width: captureW,
+        height: captureH,
+        bgcolor: '#ffffff',
+      })
+
+      for (const { el, overflow, height } of toRestore) {
+        el.style.overflow = overflow
+        el.style.height = height
+      }
+
+      const pxToPt = 72 / 96
+      const pdfW = captureW * pxToPt
+      const pdfH = captureH * pxToPt
+      const pdf = new jsPDF({
+        orientation: pdfW > pdfH ? 'l' : 'p',
+        unit: 'pt',
+        format: [pdfW, pdfH],
+        compress: true,
+      })
+      pdf.addImage(dataUrl, 'JPEG', 0, 0, pdfW, pdfH)
+
       const slug = brand.meta.client.toLowerCase().replace(/\s+/g, '-')
-      pdf!.save(`${slug}-brand-guidelines.pdf`)
+      pdf.save(`${slug}-${currentPage}.pdf`)
     } catch (err) {
       console.error('PDF generation failed:', err)
       alert(`PDF error: ${err instanceof Error ? err.message : String(err)}`)
     } finally {
+      if (sidebar) sidebar.style.display = prevSidebarDisplay
+      chrome.forEach(el => { el.style.visibility = '' })
+      pageNavs.forEach((el, i) => { el.style.display = prevPageNavDisplays[i] })
+      if (main) main.style.marginLeft = prevMargin
+      window.scrollTo(0, origScrollY)
       setPdfGenerating(false)
     }
   }
-
-  const handleExitPrint = () => {
-    setPrintMode(false)
-    document.body.classList.remove('print-active')
-  }
-
-  // Bridge for sections that have their own print buttons
-  useEffect(() => {
-    ;(window as any).__brandBookPrint = handlePrint
-    return () => { delete (window as any).__brandBookPrint }
-  })
 
   const Section = SECTIONS[currentPage] ?? SECTIONS['home']
 
@@ -260,81 +222,17 @@ export default function App() {
         onNavigate={navigate}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
-        onPrint={handlePrint}
+        onDownloadPdf={handleDownloadPdf}
+        pdfGenerating={pdfGenerating}
       />
 
       <main className="main">
-        {printMode ? (
-          <div className="print-all-pages">
-            <div className="no-print" style={{
-              position: 'sticky', top: 0, zIndex: 100,
-              background: '#111', color: '#fff',
-              padding: '10px 24px', display: 'flex', alignItems: 'center',
-              justifyContent: 'space-between', gap: 16,
-            }}>
-              <button
-                onClick={handleExitPrint}
-                style={{
-                  fontFamily: 'Saans, sans-serif', fontSize: 12, fontWeight: 500,
-                  background: 'transparent', color: 'rgba(255,255,255,0.7)',
-                  border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer',
-                  padding: '6px 14px', borderRadius: 4, flexShrink: 0,
-                }}
-              >
-                ← Back
-              </button>
-              <button
-                onClick={handleDownloadPdf}
-                disabled={pdfGenerating}
-                style={{
-                  fontFamily: 'Saans, sans-serif', fontSize: 12, fontWeight: 600,
-                  background: pdfGenerating ? 'rgba(255,255,255,0.5)' : '#fff',
-                  color: '#111', border: 'none',
-                  cursor: pdfGenerating ? 'default' : 'pointer',
-                  padding: '6px 18px', borderRadius: 4, flexShrink: 0,
-                  display: 'flex', alignItems: 'center', gap: 7,
-                }}
-              >
-                {pdfGenerating ? (
-                  <>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                      style={{ animation: 'spin 1s linear infinite' }}>
-                      <circle cx="12" cy="12" r="10" strokeOpacity="0.25"/>
-                      <path d="M12 2a10 10 0 0 1 10 10" />
-                    </svg>
-                    Generating…
-                  </>
-                ) : (
-                  <>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                      <polyline points="7 10 12 15 17 10"/>
-                      <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Download PDF
-                  </>
-                )}
-              </button>
-            </div>
-            {ALL_PAGE_IDS.map(id => {
-              const S = SECTIONS[id]
-              return S ? (
-                <div key={id} className="print-book-page">
-                  <Suspense fallback={null}><S /></Suspense>
-                </div>
-              ) : null
-            })}
-          </div>
-        ) : (
-          <>
-            <Suspense fallback={<div style={{ padding: 64, fontFamily: 'Saans, sans-serif', color: '#999' }}>Loading…</div>}>
-              <Section />
-            </Suspense>
-            <PageNav currentPage={currentPage} onNavigate={navigate} />
-          </>
-        )}
+        <div id="pdf-capture-root">
+          <Suspense fallback={<div style={{ padding: 64, fontFamily: 'Saans, sans-serif', color: '#999' }}>Loading…</div>}>
+            <Section />
+          </Suspense>
+        </div>
+        <PageNav currentPage={currentPage} onNavigate={navigate} />
       </main>
     </div>
   )

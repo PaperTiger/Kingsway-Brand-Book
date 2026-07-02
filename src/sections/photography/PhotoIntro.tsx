@@ -5,13 +5,13 @@ export default function PhotoIntro() {
         <div className="section-label">Photography</div>
         <p style={{ fontFamily: 'Saans, sans-serif', fontWeight: 300,
           fontSize: 'clamp(24px,3.2vw,48px)', lineHeight: 1.0, letterSpacing: '-0.02em',
-          color: '#111', maxWidth: 720, margin: '16px 0 0' }}>
+          color: 'var(--black)', maxWidth: 720, margin: '16px 0 0' }}>
           Photography that earns its place.
         </p>
         <div style={{ flex: 1 }} />
         <div style={{ maxWidth: 480 }}>
           <p style={{ fontFamily: 'Saans, sans-serif', fontSize: 16, lineHeight: 1.4,
-            color: '#111', margin: 0 }}>
+            color: 'var(--black)', margin: 0 }}>
             Kingsway imagery should feel real and human. Favor candid teams at work,
             real environments, and clean product shots over staged stock. Photography builds
             trust by showing how the work actually gets done.

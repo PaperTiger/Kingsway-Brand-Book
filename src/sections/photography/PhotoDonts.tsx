@@ -12,7 +12,7 @@ export default function PhotoDonts() {
       <div>
         <div className="section-label" style={{ marginBottom: 20 }}>Photography</div>
         <h2 className="section-title" style={{ marginBottom: 24 }}>Don'ts</h2>
-        <p style={{ fontFamily: "Saans, sans-serif", fontSize: 14, color: "#111", lineHeight: 1.4 }}>
+        <p style={{ fontFamily: "Saans, sans-serif", fontSize: 14, color: "var(--black)", lineHeight: 1.4 }}>
           Avoid photography choices that undermine authenticity, flatten the brand character,
           or project an image that does not reflect the real Kingsway.
         </p>
@@ -25,7 +25,7 @@ export default function PhotoDonts() {
               <div style={{ width: 20, height: 20, background: "#CC1188", borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
-              <div style={{ fontFamily: "Saans, sans-serif", fontSize: 13, color: "#111", lineHeight: 1.5 }}>{item.caption}</div>
+              <div style={{ fontFamily: "Saans, sans-serif", fontSize: 13, color: "var(--black)", lineHeight: 1.5 }}>{item.caption}</div>
             </div>
           </div>
         ))}
