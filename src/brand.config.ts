@@ -4,6 +4,16 @@ export interface ColorToken {
   textColor: string
   outline?: string
   pantone?: string
+  /**
+   * Press build as [C, M, Y, K] percentages, written by `npm run convert-cmyk`.
+   *
+   * Do not hand-edit and do not compute it. CMYK cannot be derived from RGB by
+   * arithmetic: the old formula treated ink as inverted light, which no press
+   * does, and produced C54 M0 Y14 K2 for a colour whose real build is
+   * C43 M0 Y29 K0. The script converts through littleCMS against a real ICC
+   * printer profile instead.
+   */
+  cmyk?: [number, number, number, number]
 }
 
 export interface FontFace {
@@ -144,15 +154,15 @@ const brand: BrandConfig = {
 
   colors: {
     primary: [
-      { name: 'Primary Orange', hex: '#F05102', textColor: '#000000', pantone: 'Orange 021 C' },
-      { name: 'Dark Blue',      hex: '#082C48', textColor: '#F1EBC9', pantone: 'P 108-16 C'  },
-      { name: 'Midnight Blue',  hex: '#010F1D', textColor: '#BED2E0' },
-      { name: 'White',          hex: '#F7FAFC', textColor: '#000000' },
+      { name: 'Primary Orange', hex: '#F05102', textColor: '#000000', pantone: 'Orange 021 C', cmyk: [0, 83, 100, 0] },
+      { name: 'Dark Blue',      hex: '#082C48', textColor: '#F1EBC9', pantone: 'P 108-16 C', cmyk: [98, 80, 45, 45] },
+      { name: 'Midnight Blue',  hex: '#010F1D', textColor: '#BED2E0', cmyk: [83, 73, 58, 77] },
+      { name: 'White',          hex: '#F7FAFC', textColor: '#000000', cmyk: [2, 1, 1, 0] },
     ],
     secondary: [
-      { name: 'Tan',       hex: '#F1EBC9', textColor: '#082C48', pantone: 'P 2-1 C'     },
-      { name: 'Mid Blue',  hex: '#3B6684', textColor: '#FFFFFF',  pantone: 'P 111-14 C'  },
-      { name: 'Pale Blue', hex: '#BED2E0', textColor: '#082C48', pantone: 'P 117-9 C'   },
+      { name: 'Tan',       hex: '#F1EBC9', textColor: '#082C48', pantone: 'P 2-1 C', cmyk: [5, 4, 24, 0] },
+      { name: 'Mid Blue',  hex: '#3B6684', textColor: '#FFFFFF',  pantone: 'P 111-14 C', cmyk: [81, 55, 32, 10] },
+      { name: 'Pale Blue', hex: '#BED2E0', textColor: '#082C48', pantone: 'P 117-9 C', cmyk: [24, 10, 7, 0] },
     ],
   },
 

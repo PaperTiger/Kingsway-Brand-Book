@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "convert-cmyk": "node scripts/convert-cmyk.js",
+    "prebuild": "node scripts/convert-cmyk.js --if-available",
+    "predev": "node scripts/convert-cmyk.js --if-available",
+    "prebuild:nopdf": "node scripts/convert-cmyk.js --if-available",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "VITE_BASE_PATH=/Kingsway-Brand-Book/ npm run build",
